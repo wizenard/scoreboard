@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f7b63" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="篮球记分牌" />
+    <title>篮球记分牌</title>
+    <link rel="manifest" href="./manifest.webmanifest?v=11" />
+    <link rel="icon" href="./basketball-icon.svg?v=10" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css?v=10" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-copy">
+            <p class="eyebrow">Basketball Scorekeeper</p>
+            <h1 class="brand-title" aria-label="篮球记分牌">
+              <span class="brand-title-track" aria-hidden="true">
+                <span>篮球记分牌</span>
+                <span>篮球记分牌</span>
+              </span>
+            </h1>
+          </div>
+        </div>
+        <div class="top-actions" aria-label="比赛操作">
+          <button class="ghost-btn" id="saveBtn" type="button" title="导出记录码">
+            <i data-lucide="copy" aria-hidden="true"></i>
+            <span>导出</span>
+          </button>
+          <button class="ghost-btn" id="topRestoreBtn" type="button" title="导入记录码">
+            <i data-lucide="clipboard-paste" aria-hidden="true"></i>
+            <span>导入</span>
+          </button>
+          <button class="ghost-btn" id="logBtn" type="button" title="查看操作记录">
+            <i data-lucide="file-text" aria-hidden="true"></i>
+            <span>记录</span>
+          </button>
+          <button class="ghost-btn" id="undoBtn" type="button" title="撤销上一步">
+            <i data-lucide="undo-2" aria-hidden="true"></i>
+            <span>撤销</span>
+          </button>
+          <button class="ghost-btn danger" id="resetBtn" type="button" title="清空当前比赛">
+            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+            <span>重开</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="score-band" aria-label="当前比分">
+        <article class="team-score home">
+          <label for="homeName">左侧队名</label>
+          <input id="homeName" class="team-name-input" type="text" />
+          <strong id="homeScore">0</strong>
+          <span id="homeMeta">0 名球员 · 0 次犯规</span>
+        </article>
+
+        <div class="game-center">
+          <label for="gameTitle">比赛名称</label>
+          <input id="gameTitle" type="text" />
+          <div class="game-fields">
+            <input id="gameDate" type="date" aria-label="比赛日期" />
+            <input id="gameVenue" type="text" placeholder="默认场地" aria-label="比赛场地" />
+          </div>
+          <div class="status-row">
+            <button class="primary-btn" id="finishBtn" type="button">
+              <i data-lucide="flag" aria-hidden="true"></i>
+              <span>结束比赛</span>
+            </button>
+          </div>
+          <div class="team-tabs" id="teamTabs" role="tablist" aria-label="切换记分队伍">
+            <button class="team-tab home-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="homePanel" data-team-tab="home">
+              <span class="team-tab-icon" aria-hidden="true">A</span>
+              <span class="team-tab-name">队伍A</span>
+              <strong class="team-tab-score">0</strong>
+            </button>
+            <button class="team-tab away-tab" type="button" role="tab" aria-selected="false" aria-controls="awayPanel" data-team-tab="away">
+              <span class="team-tab-icon" aria-hidden="true">B</span>
+              <span class="team-tab-name">队伍B</span>
+              <strong class="team-tab-score">0</strong>
+            </button>
+          </div>
+        </div>
+
+        <article class="team-score away">
+          <label for="awayName">右侧队名</label>
+          <input id="awayName" class="team-name-input" type="text" />
+          <strong id="awayScore">0</strong>
+          <span id="awayMeta">0 名球员 · 0 次犯规</span>
+        </article>
+      </section>
+
+      <section class="result-strip" id="resultStrip" aria-live="polite"></section>
+
+      <section class="workspace-grid" aria-label="记分操作区">
+        <div class="team-panel" id="homePanel"></div>
+        <div class="team-panel" id="awayPanel"></div>
+        <aside class="side-panel" aria-label="比赛记录和结果">
+          <section class="summary-panel">
+            <div class="section-heading">
+              <h2>统计汇总</h2>
+              <button class="icon-btn" id="copySummaryBtn" type="button" title="复制比赛结果">
+                <i data-lucide="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div id="summaryList" class="summary-list"></div>
+            <button class="secondary-btn full" id="exportCsvBtn" type="button">
+              <i data-lucide="download" aria-hidden="true"></i>
+              <span>导出球员统计 CSV</span>
+            </button>
+            <div class="backup-actions">
+              <button class="secondary-btn" id="backupBtn" type="button">
+                <i data-lucide="save" aria-hidden="true"></i>
+                <span>保存比赛记录</span>
+              </button>
+              <button class="secondary-btn" id="restoreBtn" type="button">
+                <i data-lucide="upload" aria-hidden="true"></i>
+                <span>打开比赛记录</span>
+              </button>
+              <input id="restoreInput" type="file" accept="application/json,.json" hidden />
+            </div>
+            <div class="backup-actions">
+              <button class="secondary-btn" id="copyRecordCodeBtn" type="button">
+                <i data-lucide="copy" aria-hidden="true"></i>
+                <span>复制记录码</span>
+              </button>
+              <button class="secondary-btn" id="importRecordCodeBtn" type="button">
+                <i data-lucide="clipboard-paste" aria-hidden="true"></i>
+                <span>导入记录码</span>
+              </button>
+            </div>
+            <div class="preset-box">
+              <div class="section-heading compact">
+                <h2>预设阵容</h2>
+              </div>
+              <div class="preset-actions">
+                <input id="presetNameInput" type="text" placeholder="预设名称" aria-label="预设名称" />
+                <button class="secondary-btn" id="savePresetBtn" type="button">
+                  <i data-lucide="bookmark-plus" aria-hidden="true"></i>
+                  <span>保存当前阵容</span>
+                </button>
+              </div>
+              <div class="preset-actions">
+                <select id="presetSelect" aria-label="选择预设阵容"></select>
+                <button class="secondary-btn" id="loadPresetBtn" type="button">
+                  <i data-lucide="users" aria-hidden="true"></i>
+                  <span>加载预设</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="log-panel">
+            <div class="section-heading">
+              <h2>操作记录</h2>
+              <button class="icon-btn" id="clearLogBtn" type="button" title="清空操作记录">
+                <i data-lucide="trash-2" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div id="gameLog" class="game-log" aria-live="polite"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./player-config.js?v=2"></script>
+    <script src="./app.js?v=13"></script>
+  </body>
+</html>

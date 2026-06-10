@@ -1,0 +1,3547 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f7b63" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="篮球记分牌" />
+    <title>篮球记分牌</title>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTA3LjEwMyAxMi4wOTMyTDEwNi43MTUgMTIuNDMyOUwxMDUuNzQ1IDEyLjUzMTRMMTA1LjY0NSAxMi44Njc1TDEwNC42MzIgMTIuOTE3MkMxMDQuNjMyIDEyLjkxNzIgOTIuMDM1OCAxNy45OTU2IDc3LjAyMzYgMjAuODAxOUM3Ny40MDk5IDIwLjM2NjggNzcuNzUwMiAxOS44ODI1IDc3Ljc1MDIgMTkuODgyNUM3Ny43NTAyIDE5Ljg4MjUgNzIuMTc4OSAyMS4yMzY5IDcwLjgxOTkgMjIuNTQ2OUM3MC40MzM2IDIyLjAxMTMgNzAuMDQ1MSAyMS42MjQ0IDcwLjA0NTEgMjEuNjI0NEw2OS43MDY0IDIyLjA2MDVMNzAuMDQ1MSAyMi41OTI0TDY5Ljg0OSAyMy4wNzgzTDY5LjI3MjQgMjMuMzE3NUg2OC44ODI4TDY4LjczNjUgMjIuOTMzOEw2Ny4xODk1IDIyLjg3OTNMNjcuMDQxNiAyMy43MDIzTDY2LjYwNyAyMy45OTIzTDY1LjQ0MzYgMjQuNzcxNEw2NS4wMDk2IDI1LjEwNTRMNjMuNzQ4MiAyNS4wMTEyTDYzLjUwODYgMjQuMjgxM0M2My41MDg2IDI0LjI4MTMgNTkuMzM4NiAyNy44MTg1IDU1LjcwOTIgMjguOTI4OUM1OS44MjQ2IDI0LjU3MTkgNjguNDQ5MyAxOC4yODU3IDY4LjQ0OTMgMTguMjg1N0w2OC4zOTg5IDE3Ljc1NTlMNjcuNzIzNyAxNy43MDc3QzY3LjcyMzcgMTcuNzA3NyA1MS45Mjk3IDI4LjE1NTEgNDkuNjUzNCAzMC4xODc1QzUxLjIwNTggMjguNTkxNyA1Mi42NTQ4IDI3LjQyOTUgNTIuNjU0OCAyNy40Mjk1QzUyLjY1NDggMjcuNDI5NSA0NS45MjQzIDMwLjg2NDUgNDQuNzEyOCAzNC4xMDFDNDQuNDcwNiAzMy42NzA3IDQ0LjM3NTIgMzMuNDczMyA0NC4zNzUyIDMzLjQ3MzNDNDQuMzc1MiAzMy40NzMzIDQ1Ljc3ODEgMzIuNTA2MyA0Ni40NTggMzAuMTg3NUM0Ny44NjQxIDI3LjYyNDggNTAuMDQxOSAyNS4xMDU0IDUwLjA0MTkgMjUuMTA1NEw0Ni40NTggMjguOTI4OUw0NS4yOTUyIDI5LjE3MDhMNDMuNzQ1IDMxLjYzOTNMNDMuOTg3NyAzMS44MzQ2TDQxLjk1NDEgMzQuMDU0NEw0Mi4zODY2IDM0Ljc3NzlMNDIuMTk2OSAzNS42MDUyTDQxLjcxMDMgMzUuMTI1MUw0MS4xNzc3IDM0LjI5NjhMMzQuNjM3IDQxLjI2TDM0LjI5NjcgNDAuNjMyMkwyOS41MDYgNDQuOTM4NEwzMi4wMjU3IDQ0LjI2MDRMMjUgNTEuMTgwMkMyNSA1MS4xODAyIDM0LjczNjEgNTUuNTM1NiA1MC44NjUgNDcuOTg0OUM2Ni42NzU0IDQwLjU5MjUgODQuMjg3NyA0NS44MTc2IDg0LjI4NzcgNDUuODE3NkM4NC4yODc3IDQ1LjgxNzYgNDcuODE0MyA1MC44ODk2IDM5LjY3NzIgNzkuNzYzN0MzMi4wNjU5IDEwNi43NjkgNjEuOTA3IDExOS4yMzYgNzYuNTg1MyAxMTkuMzg0TDk1LjY2NzMgMTE5LjI0MUM5NS42NjczIDExOS4yNDEgOTMuMjAxMyAxMTguOTQ2IDkwLjczMTUgMTE4LjA3MkM5Ny4xNjkzIDExNy42NCA5OS44MzUyIDExNi43NzEgOTkuODM1MiAxMTYuNzcxQzk5LjgzNTIgMTE2Ljc3MSA5OS41NDIyIDExNi44MTggOTcuNjA4MiAxMTYuMTkxQzEwOC45NDIgMTE1LjE3IDExMS45NDUgMTEzLjMzNyAxMTEuOTQ1IDExMy4zMzdMMTEwLjc4MyAxMTMuMDQ0VjExMi44MDJDMTEwLjc4MyAxMTIuODAyIDExOS4yNTggMTExLjk4MSAxMzQuMTggMTA0LjYyN0MxMjYuMDQyIDEwOC4wMTUgMTE2LjgzNCAxMDguNjkxIDExNi44MzQgMTA4LjY5MUwxMTguMTQ0IDEwNy4xOUMxMTguMTQ0IDEwNy4xOSAxMTkuMDE2IDEwNy40MzIgMTE5LjU0OSAxMDcuMjQxQzEyMi4yMTIgMTA1LjgzNyAxMjIuMjU5IDEwMy44MDcgMTIyLjI1OSAxMDMuODA3QzEyMi4yNTkgMTAzLjgwNyAxMjIuMzA5IDEwNS40MDMgMTIzLjQ3MSAxMDQuMTQ2QzEyNC44MjggMTAyLjkzMiAxMjMuNzYxIDEwMS45MTkgMTIzLjc2MSAxMDEuOTE5TDEyMi45OSAxMDEuNThDMTIyLjk5IDEwMS41OCAxMjQuNDkxIDk5Ljk4NTMgMTI2LjA0MiA5OC43Nzg1QzEyNS4xNyA5OC4zODc0IDEyNS4yNjYgOTcuMDMxNCAxMjUuMjY2IDk3LjAzMTRMMTI2LjE4MiA5Ni45MzcyTDEyNi40MjYgOTYuMzUzOUwxMjUuNyA5Ni4wNjMzTDEyNS4xNyA5NS41ODQzTDEyNS45OTMgOTUuMzM5OEMxMjUuOTkzIDk1LjMzOTggMTMxLjIyMyA4Ny42MDM5IDEzOS4yNjQgODAuNjg0N0MxMzUuOTIzIDgyLjM3OTkgMTM0Ljk1MSA4Mi45MDkyIDEzNC45NTEgODIuOTA5MkMxMzQuOTUxIDgyLjkwOTIgMTM2LjQ0MyA4MC4zNTgxIDE0Ny45ODEgNzMuNDc4NkMxNTUuNzQ1IDY4Ljg0NzQgMTU3LjQyNyA2NC44MTg2IDE1Ny40MjcgNjQuODE4NkMxNTcuNDI3IDY0LjgxODYgMTUxLjcyNyA3My4zNjY0IDE0Mi40NjEgNzMuMTQzQzEzMi41NzIgNzIuOTAwNiAxMjUuMjMgNzQuMjQzOSAxMjUuMTcgNzQuMjUxOUMxMjUuMjE3IDc0LjI0NDQgMTI5LjczNCA3My4zNjk2IDEzMi4yOTEgNzAuODE5NUMxMzIuMjkxIDcwLjgxOTUgMTIzLjQ0NiA3My45MDk0IDExOC4xOTQgNzAuMzgyOEMxMDYuMjI4IDYyLjM1MTEgODYuNzA4OCA2NS44ODI5IDg2LjcwODggNjUuODgyOUM4Ni43MDg4IDY1Ljg4MjkgNjguMzE3MyA2OC4yMjUgNjQuNTI0NiA4Mi40MzAyQzYxLjgwOTQgOTIuNTg4NiA3My40MzkyIDk1LjM4MzcgNzMuNDM5MiA5NS4zODM3QzczLjQzOTIgOTUuMzgzNyA4MC44Njg3IDk3LjE0NzggODMuNjA4MyA5MC4wNzI0Qzg1LjI1NzEgODUuODEyMyA4MS42NzE3IDgzLjI5NCA4MS42NzE3IDgzLjI5NEM4MS42NzE3IDgzLjI5NCA3NS42MzkyIDc3LjM1NzEgODAuMTIxNCA3Mi4zNjZDODUuMTYwMSA2Ni43NTM2IDEwMC40NjUgNzAuNDI2OCAxMDAuNDY1IDcwLjQyNjhDMTAwLjQ2NSA3MC40MjY4IDEyMS4xOTkgNzUuNTU4NiAxMDcuNjM1IDk5LjkzNUM5OC44MTkyIDExNS40MTQgNzkuNjM4MSAxMTMuODcgNzkuNjM4MSAxMTMuODdDNzkuNjM4MSAxMTMuODcgNjAuMTY1OSAxMTQuNzM2IDU3Ljc0NDkgOTQuMzI2OEM1Ny4wNjU0IDg4LjIzIDU3LjkzNjcgODQuOTM4NSA1Ny45MzY3IDg0LjkzODVMNTguODU3NCA4NC4xNTYyTDU4LjQ1ODMgODMuODYzVjgzLjQ2NkM1OC40NTgzIDgzLjQ2NiA1OC40OTU0IDgzLjA2NTQgNTkuMjU4NiA4My4wNjU0QzYwLjAxNzUgODMuMDY1NCA1OS42NTcxIDgyLjE5MzYgNTkuNjU3MSA4Mi4xOTM2TDU4LjgyMTMgODIuMTIwNkM1OC44MjEzIDgyLjEyMDYgNTguNzgzMiA4MS4yMTkyIDU5LjYxOTUgODAuNTI5NkM1OS4yMTgzIDgwLjQxNzkgNTkuMjU4NiA4MC4yMDA0IDU5LjI1ODYgODAuMjAwNEM1OS4yNTg2IDgwLjIwMDQgNTkuNjU3MSA3OS4yNjIgNjAuNDkwOCA3OS42MTkyQzYwLjU2MjkgODAuOTY0MSA2MS40MDA4IDgwLjAyMTUgNjEuNDAwOCA4MC4wMjE1QzYxLjQwMDggODAuMDIxNSA2MC41Mjk1IDgwLjE2NiA2MS4wNzMzIDc4LjIwNUM2MS45ODEyIDc2LjI0NzggNjQuODg2NiA3NC41NDQgNjQuODg2NiA3NC41NDRDNjQuODg2NiA3NC41NDQgNjQuNDUwNCA3NC41MDQzIDY0LjA1MjQgNzQuMDcxNEM2Ni43MDQ1IDczLjIwMTggNjcuNzU2NiA3MC45ODUyIDY3Ljc1NjYgNzAuOTg1Mkw2Ny4zMTg4IDcwLjg3ODhDNjcuMzE4OCA3MC44Nzg4IDY2Ljk5MzkgNzEuMzQ3NyA2Ni4zMDQ0IDcxLjI0MTlDNjYuNDUwNiA3MC42OTUxIDY2LjY2OTUgNzAuNDQyNyA2Ni42Njk1IDcwLjQ0MjdMNjYuMzA0NCA3MC4zNzZWNjkuNTcyNUw2NS4zNTk5IDY5LjUwMTFDNjUuMzU5OSA2OS41MDExIDY0LjY2ODMgNjkuMDYyOCA2NS4zOTQ0IDY4LjMwMjNDNjcuMjg1NCA2Ny45Mzc2IDY3LjE0MDcgNjYuMDE2MyA2Ny4xNDA3IDY2LjAxNjNMNjcuODI5NyA2Ni4yMzQ5TDY4LjMwMTQgNjUuNTEwM0w2OC41OTM0IDY0LjcwOTVMNjguOTU3IDY0LjMxMjFMNzAuMDgyMiA2NC43ODE1TDcwLjczNTEgNjUuMTEwMkw3Mi4zNzE4IDY2LjUyNzFMNzEuMDI2NiA2NC4xNjIzTDcxLjMxODcgNjMuNTQ3OEw3MS40OTg5IDYyLjk2NUw3MC41OTIxIDYyLjg1OTdMNzAuNTU1NSA2Mi40MjQxTDcxLjQ5ODkgNjIuMDZMNzEuNTczMSA2MS43NzFMNzEuODYzNSA2MS42NjE0TDcyLjAwNzcgNjAuNzkyOUw3My40MjMzIDYwLjY4NzZMNzQuMDgwNSA1OS4yMzM2Qzc0LjA4MDUgNTkuMjMzNiA4MS41NzYzIDQ4LjcgOTkuMzAyMSA0OS43Mjg5QzExMi42NjggNTAuNTAwMSAxMTYuMDcyIDU4LjU4NzQgMTMyLjA1IDU3LjQ2NTNDMTQxLjczMiA1Ni43OTI2IDE0NC4zNDUgNTcuODUzMyAxNDQuMzQ1IDU3Ljg1MzNDMTQ0LjM0NSA1Ny44NTMzIDEzOS40MTEgNTQuMzcwMSAxMzQuMTggNTQuMDg0M0MxMzkuNTA2IDUzLjc5IDE0My42NzMgNTMuMjEgMTQzLjY3MyA1My4yMUwxNDIuOTkyIDUyLjg0NjlMMTQyLjMzOCA1Mi40ODdMMTQxLjgyOSA1Mi4yNjQ3TDE0MS4xNzcgNTIuNzA1NkwxNDAuMzA0IDUyLjc3N0wxMzguOTI2IDUyLjE5NDNMMTM4LjI3MSA1MS45Nzc4TDEzNy42MTYgNTIuMDQ4N0wxMzYuOTYzIDUyLjg0NjlMMTM2LjAxNyA1Mi43MDU2TDEzMy4zMzEgNTIuMTk0M0wxMzYuMjM1IDUyLjA0ODdMMTM3LjEwNSA1MS40Njc2TDEzNy43NjIgNTEuMTA3N0gxMzguNjMzTDEzOC43MDcgNTEuNjEyMUwxNDAuMTU5IDUxLjc1OTdMMTQwLjgxIDUyLjE5NDNMMTQxLjc1OCA1MS43NTk3TDE0Mi43MDMgNTIuMDQ4N0wxNDMuNDI5IDUxLjc1OTdMMTQ0LjE1MiA1MS4zOTY3TDE0NC42NjQgNTEuMjU0M0wxNDUuNDYzIDUxLjQ2NzZMMTQ2Ljc3MiA1MC4zMDc0TDE0Ny40MjQgNTAuMjM3NUwxNDcuODU1IDUwLjk2MjFMMTQ4LjIyNCA1MS4yNTQzTDE0Ny44NTUgNTEuODMwMUgxNDguNTg2TDE0OC44MDMgNTAuODg5NkwxNDguNjYxIDUwLjUyMzlMMTQ5LjY3NCA1MC4yMzc1SDE1MC43NjhMMTUwLjkxMyA1MC45NjIxTDE1MS4yNzQgNTAuNTIzOUwxNTEuMzQ3IDUwLjAxNzlMMTUyLjI5MyA0OS4zNjY5TDE1NS45MjMgNDcuNDA3NUwxNTcuMTU3IDQ3LjA0MjhMMTU3LjczOSA0Ni42MDk0TDE2MC40MjggNDYuMzE1NkMxNjAuNDI4IDQ2LjMxNTYgMTY0LjEzNiA0NS4xNTYgMTY3LjE4NyA0MS4yNDA5QzE2Ny4xODcgNDEuMjQwOSAxNTUuMTk3IDQ5LjAwMTcgMTM3LjMyNCA0NC43OTQ1QzEyNC44NyA0MS44NTcgMTIyLjg2OCAzOC43NzE4IDEyMi44NjggMzguNzcxOEwxMjMuODExIDM4LjQwODJMMTIyLjM2IDM3Ljk3NDJMMTIxLjYzMyAzNy42MTQ4TDEyMC4zMjMgMzcuNzU2N0wxMTkuMzA4IDM2Ljk1OTFIMTE3LjM0NkwxMTcuMDU0IDM2LjQ0OTRMMTE1LjA5MyAzNi4zMDQ0TDExNC44NzIgMzUuOTQwMkwxMTguNzk5IDM1Ljg2NjFMMTE5LjY2OSAzNi42NzExTDEyMC42MTQgMzYuNTIxNEwxMjEuNzc4IDM3LjEwM0wxMjIuMjg5IDM3LjE3NzdMMTIyLjk0IDM3LjYxNDhIMTI0LjI0OEwxMjQuNjg0IDM4LjE4OTZMMTI0LjMyIDM4LjYyNThMMTI0Ljk3NCAzOS4zNTNMMTI1Ljg0OCAzOS41Njc5VjM4LjYyNThMMTI1LjMzNyAzOC4wNDYyTDEyNS44NDggMzcuMjUxOEgxMjUuMTE4TDEyNC43NTkgMzYuOTU5MUwxMjQuNjA5IDM1LjY0ODZMMTIzLjc0IDM1LjQzNDhDMTIzLjc0IDM1LjQzNDggMTEwLjM2OCAyNy4zMDc3IDk5LjMyNyAzMS45NTQ4Qzk5LjMyNyAzMS45NTQ4IDk5Ljk4MSAzMS4xNTI5IDEwMS4xOTIgMzAuNzE5NEMxMDEuNTMyIDMwLjY3MjkgMTAxLjI4OSAzMC4zMzIgMTAxLjI4OSAzMC4zMzJMMTAxLjU3OCAzMC4xODc1TDEwMy4xMjggMzAuMjgyOEwxMDIuOTgzIDI5Ljk0NTFMMTA1LjIxMiAyOS44OTY5TDEwNS4wNjcgMjkuNDEyN0wxMDYuMzMgMjkuMzg4OEwxMDUuMDE2IDI5LjAyMjZMMTA0LjQ2NyAyOS43MzVMMTA0LjAyOCAyOS4yMzY5TDEwMy4zNjkgMjkuMDIyNkwxMDMuNDcyIDI5Ljc4NzlMMTAyLjY5NCAyOS42MDk1TDEwMS43MjUgMjkuODk2OUwxMDEuMDQ4IDMwLjA0MTRMMTAwLjI3MiAyOS44OTY5TDEwMC4yMjIgMjkuNDYyNEw5OS4zNTE5IDMwLjA0MTRMOTguODY0OCAyOS45NDUxTDk4LjE4NTkgMjkuODQ2N0w5OC4wOTI2IDI4LjU5MTdMOTkuMzAyMSAyNy44NjEzQzk5LjMwMjEgMjcuODYxMyA4OS40Njg1IDI3LjQ3NSA4MC41MTA0IDMwLjk1OTJDNzEuNTQ3NiAzNC40NDI5IDcwLjYyODEgMzYuMDQwOCA2MC42NDkzIDM4LjEyMDhDNjguMzUxNyAzNS42NDg2IDcyLjg1NDEgMzIuNjA2MyA3NS4xODA4IDMxLjE1MjlDODEuNjI0IDI3LjQ3NSA5NS4xMzc5IDIwLjEyNiA5OS43Mzc3IDE3LjQxNjZDOTkuODM1MiAxNi44ODE1IDk5Ljk4MSAxNi44ODE1IDk5Ljk4MSAxNi44ODE1TDEwMC41MTQgMTcuMjE5N0wxMDEuMjQxIDE2LjQwMDlMMTAyLjAxOCAxNi4yMDgzVjE1LjkxNDVMMTAzLjIyNyAxNS44Njg1TDEwMy4yNzMgMTUuNDMyNEwxMDMuODU3IDE1LjQ4MjFMMTA0LjAwMiAxNS4wNDdMMTA1LjAxNiAxNC43NTdMMTAzLjgwOSAxNC42MDk5TDEwMy43NTcgMTQuMjcyN0wxMDUuMDE2IDE0LjE3MjdMMTA1LjE2NSAxMy43ODk1TDEwNS43ODkgMTQuMTI2NkwxMDYuODU2IDEyLjk2NTlMMTA3LjczMSAxMi44MjE0TDEwOC4yMTQgMTJMMTA3LjEwMyAxMi4wOTMyWk0xMDkuMjM1IDI4LjIzODJMMTA3LjgyOCAyOC44MzE1TDEwNy4yNDggMjguODc4NkwxMDYuOTU5IDI4Ljc5MzRMMTA2LjgwNSAyOC45MTNMMTA2LjYwNyAyOS4zODNMMTA3LjYzNSAyOS4zNjVMMTA3Ljc3OCAyOS4xMjIxTDExMi42MjQgMjguNzMzNkwxMTkuMjU4IDI4LjM0NjdMMTEzLjMwMSAyOC4wMDY5TDExMi44MTUgMjguNDQ3OEwxMTEuOTkyIDI4LjM5NjRMMTExLjg5NCAyOC4yNTQxTDExMS4zOTIgMjguMDc3OEwxMTAuNDQzIDI4LjU5MTdIMTA5Ljg2MkwxMDkuNzE3IDI3LjcxODRMMTA5LjIzNSAyOC4yMzgyWk0xMDYuMzMgMjkuMzg4OEwxMDYuNTc3IDI5LjQ1NzFMMTA2LjYwNyAyOS4zODNMMTA2LjMzIDI5LjM4ODhaIiBmaWxsPSIjRTQxRTI2Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTYuOTY2MyAxNjAuODAxSDU1LjE3ODFMNTQuODQ5OCAxNTYuMDYySDU0Ljc3NDVDNTMuMDIzNyAxNTkuNzgxIDQ5LjUxNTQgMTYxLjM1MSA0NS43NTU3IDE2MS4zNTFDMzcuNTM4OSAxNjEuMzUxIDMzLjQ0OTIgMTU0Ljg5NiAzMy40NDkyIDE0Ny43ODZDMzMuNDQ5MiAxNDAuNjc3IDM3LjUzODkgMTM0LjIyMiA0NS43NTU3IDEzNC4yMjJDNTEuMjMyMiAxMzQuMjIyIDU1LjY4ODcgMTM3LjE3NiA1Ni42Mzk2IDE0Mi44NjRINTQuMTU0N0M1My44Mjc1IDEzOS44NzQgNTAuNzIxMSAxMzYuMzM3IDQ1Ljc1NTcgMTM2LjMzN0MzOC44NTI3IDEzNi4zMzcgMzUuOTMzIDE0Mi4wOTcgMzUuOTMzIDE0Ny43ODZDMzUuOTMzIDE1My40NzQgMzguODUyNyAxNTkuMjM0IDQ1Ljc1NTcgMTU5LjIzNEM1MS41MjMyIDE1OS4yMzQgNTQuODg0OSAxNTUuMTg3IDU0Ljc3NDUgMTQ5LjY4Mkg0NS45MDE3VjE0Ny41NjVINTYuOTY2M1YxNjAuODAxWiIgZmlsbD0iI0U0MUUyNiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTczLjM2MDEgMTUwLjUyMUg3My4yODgyQzcyLjk5NTUgMTUxLjA2OCA3MS45NzMzIDE1MS4yNDkgNzEuMzUwNiAxNTEuMzU5QzY3LjQ0NDkgMTUyLjA1MiA2Mi41ODcxIDE1Mi4wMTUgNjIuNTg3MSAxNTUuN0M2Mi41ODcxIDE1Ny45OTYgNjQuNjMxMSAxNTkuNDE3IDY2Ljc4NzcgMTU5LjQxN0M3MC4yOTMyIDE1OS40MTcgNzMuMzk2MyAxNTcuMTk0IDczLjM2MDEgMTUzLjUxMVYxNTAuNTIxWk02MS4wODk4IDE0Ny43NUM2MS4zMDk1IDE0My4zMzggNjQuNDE0MiAxNDEuNDQyIDY4LjcyMyAxNDEuNDQyQzcyLjA0NzQgMTQxLjQ0MiA3NS42NjExIDE0Mi40NjMgNzUuNjYxMSAxNDcuNDk1VjE1Ny40ODVDNzUuNjYxMSAxNTguMzYzIDc2LjA5OTcgMTU4Ljg3IDc3LjAxMTEgMTU4Ljg3Qzc3LjI2ODYgMTU4Ljg3IDc3LjU2MTMgMTU4Ljc5OCA3Ny43NDE5IDE1OC43MjRWMTYwLjY1NkM3Ny4yMzEzIDE2MC43NjYgNzYuODY2MiAxNjAuODAxIDc2LjI0NTIgMTYwLjgwMUM3My45MDg2IDE2MC44MDEgNzMuNTQ0IDE1OS40ODkgNzMuNTQ0IDE1Ny41MjJINzMuNDY5OUM3MS44NjM0IDE1OS45NjQgNzAuMjIwMiAxNjEuMzUxIDY2LjYwNTQgMTYxLjM1MUM2My4xMzQ0IDE2MS4zNTEgNjAuMjg2NiAxNTkuNjM3IDYwLjI4NjYgMTU1Ljg0M0M2MC4yODY2IDE1MC41NTggNjUuNDM3MSAxNTAuMzc1IDcwLjQwMTkgMTQ5Ljc5MkM3Mi4zMDEgMTQ5LjU3MyA3My4zNjAxIDE0OS4zMTcgNzMuMzYwMSAxNDcuMjM4QzczLjM2MDEgMTQ0LjE0MiA3MS4xMzI3IDE0My4zNzUgNjguNDMwNCAxNDMuMzc1QzY1LjU4MDkgMTQzLjM3NSA2My40NjIyIDE0NC42ODcgNjMuMzkwMyAxNDcuNzVINjEuMDg5OFoiIGZpbGw9IiNFNDFFMjYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04MC4yNjA3IDE0MS45ODhIODIuMzc3MlYxNDYuNDAxSDgyLjQ0OTFDODMuNjE5NyAxNDMuMzc1IDg2LjE3NiAxNDEuNTg3IDg5LjU3MTcgMTQxLjczNFYxNDQuMDMyQzg1LjQwNzggMTQzLjgxMyA4Mi41NjIzIDE0Ni44NzMgODIuNTYyMyAxNTAuNzc1VjE2MC44MDFIODAuMjYwN1YxNDEuOTg4WiIgZmlsbD0iI0U0MUUyNiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEwNC42NTMgMTUwLjA4NEMxMDQuNTQ0IDE0Ni42MTkgMTAyLjM4OCAxNDMuMzc1IDk4LjY2MyAxNDMuMzc1Qzk0LjkwMjggMTQzLjM3NSA5Mi44MjAzIDE0Ni42NTYgOTIuNDU2OCAxNTAuMDg0SDEwNC42NTNaTTkyLjQ1NjggMTUyLjAxNUM5Mi40OTI1IDE1NS4zNzEgOTQuMjQ1IDE1OS40MTcgOTguNjYzIDE1OS40MTdDMTAyLjAyNSAxNTkuNDE3IDEwMy44NSAxNTcuNDQ4IDEwNC41OCAxNTQuNjAzSDEwNi44ODFDMTA1Ljg5NiAxNTguODcgMTAzLjQxMyAxNjEuMzUxIDk4LjY2MyAxNjEuMzUxQzkyLjY3NDggMTYxLjM1MSA5MC4xNTUzIDE1Ni43NTUgOTAuMTU1MyAxNTEuMzk3QzkwLjE1NTMgMTQ2LjQzNiA5Mi42NzQ4IDE0MS40NDIgOTguNjYzIDE0MS40NDJDMTA0LjcyNyAxNDEuNDQyIDEwNy4xMzYgMTQ2LjcyOCAxMDYuOTUzIDE1Mi4wMTVIOTIuNDU2OFoiIGZpbGw9IiNFNDFFMjYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMTAuMDE4IDE0MS45ODhIMTEyLjMyVjE0NS4yMzVIMTEyLjM5M0MxMTMuMjMzIDE0Mi45NzMgMTE1Ljc1MiAxNDEuNDQyIDExOC40MTkgMTQxLjQ0MkMxMjMuNzE0IDE0MS40NDIgMTI1LjMyIDE0NC4yMTIgMTI1LjMyIDE0OC42OTdWMTYwLjgwMUgxMjMuMDE4VjE0OS4wNjFDMTIzLjAxOCAxNDUuODE3IDEyMS45NjEgMTQzLjM3NSAxMTguMjM2IDE0My4zNzVDMTE0LjU4MiAxNDMuMzc1IDExMi4zOTMgMTQ2LjE0NSAxMTIuMzIgMTQ5LjgyOVYxNjAuODAxSDExMC4wMThWMTQxLjk4OFoiIGZpbGw9IiNFNDFFMjYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNDEuNzE1IDE1MC41MjFIMTQxLjY0MUMxNDEuMzUxIDE1MS4wNjggMTQwLjMyNyAxNTEuMjQ5IDEzOS43MDcgMTUxLjM1OUMxMzUuNzk4IDE1Mi4wNTIgMTMwLjk0MSAxNTIuMDE1IDEzMC45NDEgMTU1LjdDMTMwLjk0MSAxNTcuOTk2IDEzMi45ODUgMTU5LjQxNyAxMzUuMTM5IDE1OS40MTdDMTM4LjY0NiAxNTkuNDE3IDE0MS43NSAxNTcuMTk0IDE0MS43MTUgMTUzLjUxMVYxNTAuNTIxWk0xMjkuNDQ0IDE0Ny43NUMxMjkuNjYyIDE0My4zMzggMTMyLjc2OCAxNDEuNDQyIDEzNy4wNzYgMTQxLjQ0MkMxNDAuMzk5IDE0MS40NDIgMTQ0LjAxNCAxNDIuNDYzIDE0NC4wMTQgMTQ3LjQ5NVYxNTcuNDg1QzE0NC4wMTQgMTU4LjM2MyAxNDQuNDUyIDE1OC44NyAxNDUuMzY0IDE1OC44N0MxNDUuNjIgMTU4Ljg3IDE0NS45MTQgMTU4Ljc5OCAxNDYuMDk1IDE1OC43MjRWMTYwLjY1NkMxNDUuNTgzIDE2MC43NjYgMTQ1LjIxOCAxNjAuODAxIDE0NC41OTcgMTYwLjgwMUMxNDIuMjYxIDE2MC44MDEgMTQxLjg5NyAxNTkuNDg5IDE0MS44OTcgMTU3LjUyMkgxNDEuODI0QzE0MC4yMTUgMTU5Ljk2NCAxMzguNTczIDE2MS4zNTEgMTM0Ljk1NiAxNjEuMzUxQzEzMS40ODkgMTYxLjM1MSAxMjguNjQxIDE1OS42MzcgMTI4LjY0MSAxNTUuODQzQzEyOC42NDEgMTUwLjU1OCAxMzMuNzg5IDE1MC4zNzUgMTM4Ljc1MyAxNDkuNzkyQzE0MC42NTUgMTQ5LjU3MyAxNDEuNzE1IDE0OS4zMTcgMTQxLjcxNSAxNDcuMjM4QzE0MS43MTUgMTQ0LjE0MiAxMzkuNDg2IDE0My4zNzUgMTM2Ljc4MyAxNDMuMzc1QzEzMy45MzUgMTQzLjM3NSAxMzEuODE4IDE0NC42ODcgMTMxLjc0NCAxNDcuNzVIMTI5LjQ0NFoiIGZpbGw9IiNFNDFFMjYiLz4KPC9zdmc+Cg==" type="image/svg+xml" />
+    <style>
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-strong: #f0f4f8;
+  --text: #172033;
+  --muted: #647184;
+  --line: #d9e1ec;
+  --green: #0f7b63;
+  --green-dark: #075b49;
+  --orange: #d86f1d;
+  --red: #c93434;
+  --blue: #246bfd;
+  --team-home-accent: #008c8c;
+  --team-home-soft: #e6fbf7;
+  --team-home-soft-strong: #c9f5ed;
+  --team-away-accent: #8b3dff;
+  --team-away-soft: #f4edff;
+  --team-away-soft-strong: #e7d9ff;
+  --shadow: 0 16px 40px rgba(23, 32, 51, 0.1);
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(15, 123, 99, 0.1), transparent 260px),
+    var(--bg);
+  font-family:
+    "Microsoft YaHei",
+    "PingFang SC",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1500px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.brand-lockup {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.brand-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.brand-title {
+  max-width: min(470px, 44vw);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.brand-title-track {
+  --title-scroll-gap: 28px;
+  --title-scroll-half-gap: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--title-scroll-gap);
+  min-width: max-content;
+  will-change: transform;
+}
+
+.brand-title-track span {
+  flex: 0 0 auto;
+}
+
+.brand-title-track span + span {
+  display: none;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+@keyframes brandTitleScroll {
+  0%,
+  18% {
+    transform: translateX(0);
+  }
+  88%,
+  100% {
+    transform: translateX(calc(-50% - var(--title-scroll-half-gap)));
+  }
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+.top-actions,
+.status-row,
+.form-row,
+.game-fields,
+.button-row,
+.section-heading,
+.player-actions,
+.score-actions,
+.stat-chips,
+.backup-actions,
+.preset-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ghost-btn,
+.primary-btn,
+.secondary-btn,
+.icon-btn,
+.mini-btn,
+.score-btn,
+.foul-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  border-radius: var(--radius);
+  font-weight: 800;
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    border-color 120ms ease;
+}
+
+.ghost-btn {
+  padding: 0 14px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line);
+}
+
+.ghost-btn:hover,
+.secondary-btn:hover,
+.icon-btn:hover,
+.mini-btn:hover {
+  background: var(--surface-strong);
+}
+
+.danger {
+  color: var(--red);
+}
+
+.primary-btn {
+  padding: 0 16px;
+  color: #fff;
+  background: var(--green);
+}
+
+#finishBtn {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 22px;
+  font-size: 18px;
+  letter-spacing: 0;
+  background: var(--red);
+  box-shadow: 0 10px 24px rgba(201, 52, 52, 0.2);
+}
+
+#finishBtn svg {
+  width: 22px;
+  height: 22px;
+}
+
+#finishBtn:hover {
+  background: #a82828;
+}
+
+.team-tabs {
+  display: none;
+  gap: 0;
+  margin-top: 8px;
+  background: #fff;
+  border-bottom: 1px solid #e5edf7;
+}
+
+.team-tab {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px 12px;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 17px;
+  font-weight: 900;
+  transition:
+    transform 120ms ease,
+    color 120ms ease;
+}
+
+.team-tab::before {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: transparent;
+  transform: scaleX(0);
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.team-tab:active {
+  transform: scale(0.98);
+}
+
+.team-tab-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-grid;
+  place-items: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 1000;
+  line-height: 1;
+}
+
+.home-tab .team-tab-icon {
+  background: var(--team-home-accent);
+  border-radius: 50%;
+}
+
+.away-tab .team-tab-icon {
+  background: var(--team-away-accent);
+  border-radius: 7px;
+}
+
+.team-tab-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.team-tab-score {
+  color: currentColor;
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+}
+
+.team-tab.home-tab.is-active,
+.team-tab.home-tab[aria-selected="true"] {
+  color: var(--team-home-accent);
+  background: var(--team-home-soft);
+  border-radius: 8px 8px 0 0;
+}
+
+.team-tab.away-tab.is-active,
+.team-tab.away-tab[aria-selected="true"] {
+  color: var(--team-away-accent);
+  background: var(--team-away-soft);
+  border-radius: 8px 8px 0 0;
+}
+
+.team-tab.home-tab.is-active::before,
+.team-tab.home-tab[aria-selected="true"]::before {
+  background: var(--team-home-accent);
+  transform: scaleX(1);
+}
+
+.team-tab.away-tab.is-active::before,
+.team-tab.away-tab[aria-selected="true"]::before {
+  background: var(--team-away-accent);
+  transform: scaleX(1);
+}
+
+.team-tab .team-tab-score.is-score-number-pop {
+  animation: teamScorePop 780ms cubic-bezier(0.17, 0.95, 0.25, 1.35);
+}
+
+.team-tab .score-burst {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: 2;
+  color: var(--red);
+  padding: 0;
+  font-size: 36px;
+  font-weight: 1000;
+  line-height: 1;
+  text-shadow:
+    0 2px 0 #fff,
+    0 0 18px rgba(201, 52, 52, 0.35);
+  pointer-events: none;
+  animation: scoreBurstFly 780ms cubic-bezier(0.17, 0.95, 0.25, 1) forwards;
+}
+
+.primary-btn:hover {
+  background: var(--green-dark);
+}
+
+.secondary-btn {
+  padding: 0 13px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.secondary-btn.danger {
+  color: var(--red);
+  border-color: #f2b6af;
+  background: #fff8f7;
+}
+
+.remove-player-btn span {
+  display: none;
+}
+
+.remove-player-btn.is-active {
+  color: #fff;
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.secondary-btn.full {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.backup-actions {
+  margin-top: 8px;
+}
+
+.backup-actions .secondary-btn {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.preset-box {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading.compact h2 {
+  font-size: 16px;
+}
+
+.preset-actions input,
+.preset-actions select {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 38px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0 10px;
+  outline: none;
+}
+
+.preset-actions input:focus,
+.preset-actions select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(15, 123, 99, 0.14);
+}
+
+.preset-actions .secondary-btn {
+  flex: 0 0 auto;
+}
+
+.icon-btn,
+.mini-btn {
+  position: relative;
+  overflow: hidden;
+  width: 38px;
+  padding: 0;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.mini-btn.minus {
+  color: var(--muted);
+}
+
+.score-band {
+  display: grid;
+  grid-template-columns: minmax(230px, 1fr) minmax(300px, 0.8fr) minmax(230px, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.team-score,
+.game-center,
+.team-panel,
+.summary-panel,
+.log-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.team-score {
+  position: relative;
+  overflow: hidden;
+  min-height: 214px;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  padding: 18px;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.team-score label,
+.game-center label,
+.form-row label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.team-score strong {
+  display: block;
+  position: relative;
+  z-index: 1;
+  font-size: 78px;
+  line-height: 0.95;
+  font-variant-numeric: tabular-nums;
+  transform-origin: left center;
+  will-change: transform, text-shadow;
+}
+
+.team-score span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.team-score.is-score-celebrate {
+  transform: translateY(-2px) scale(1.018);
+}
+
+.team-score.is-score-plus {
+  border-color: rgba(15, 123, 99, 0.72);
+  box-shadow:
+    0 0 0 4px rgba(15, 123, 99, 0.16),
+    0 18px 46px rgba(15, 123, 99, 0.25);
+}
+
+.team-score.is-score-minus {
+  border-color: rgba(100, 116, 139, 0.72);
+  box-shadow:
+    0 0 0 4px rgba(100, 116, 139, 0.18),
+    0 18px 46px rgba(100, 116, 139, 0.22);
+}
+
+.team-score strong.is-score-number-pop {
+  animation: teamScorePop 780ms cubic-bezier(0.17, 0.95, 0.25, 1.35);
+}
+
+.team-score .score-burst {
+  position: absolute;
+  right: 18px;
+  top: 46%;
+  z-index: 2;
+  color: var(--red);
+  padding: 0;
+  font-size: 46px;
+  font-weight: 1000;
+  line-height: 1;
+  text-shadow:
+    0 2px 0 #fff,
+    0 0 18px rgba(201, 52, 52, 0.35);
+  pointer-events: none;
+  animation: scoreBurstFly 780ms cubic-bezier(0.17, 0.95, 0.25, 1) forwards;
+}
+
+.team-score .score-burst.is-minus {
+  color: var(--red);
+}
+
+@keyframes teamScorePop {
+  0% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  24% {
+    transform: scale(1.26) rotate(-2deg);
+    text-shadow: 0 0 22px rgba(15, 123, 99, 0.38);
+  }
+  48% {
+    transform: scale(0.92) rotate(1deg);
+  }
+  72% {
+    transform: scale(1.08);
+    text-shadow: 0 0 14px rgba(15, 123, 99, 0.22);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+}
+
+@keyframes scoreBurstFly {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.45) rotate(-10deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.24) rotate(4deg);
+  }
+  72% {
+    opacity: 1;
+    transform: translateY(-34px) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-58px) scale(0.78);
+  }
+}
+
+.team-name-input,
+.game-center input,
+.player-form input,
+.bulk-input {
+  width: 100%;
+  min-height: 42px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0 11px;
+  outline: none;
+}
+
+.team-name-input {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.team-name-input:focus,
+.game-center input:focus,
+.player-form input:focus,
+.bulk-input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(15, 123, 99, 0.14);
+}
+
+.home {
+  border-top: 5px solid var(--green);
+}
+
+.away {
+  border-top: 5px solid var(--orange);
+}
+
+.game-center {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  min-height: 214px;
+  padding: 18px;
+}
+
+.game-fields {
+  align-items: stretch;
+}
+
+.game-fields input {
+  min-width: 0;
+}
+
+.result-strip {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: var(--green-dark);
+  background: #ecf8f4;
+  border: 1px solid #b9ded4;
+  border-radius: var(--radius);
+  font-weight: 900;
+}
+
+.result-strip.is-live {
+  color: var(--muted);
+  background: #fff;
+  border-color: var(--line);
+}
+
+.workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(340px, 1fr) minmax(340px, 1fr) minmax(300px, 0.7fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.team-panel,
+.summary-panel,
+.log-panel {
+  padding: 16px;
+}
+
+.team-panel {
+  min-height: 520px;
+  padding: 16px;
+}
+
+.team-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.team-header p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.stat-chips {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  color: var(--muted);
+  background: var(--surface-strong);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.player-form {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) auto auto;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.bulk-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.bulk-input {
+  min-height: 38px;
+}
+
+.player-list {
+  display: grid;
+  gap: 10px;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  color: var(--muted);
+  text-align: center;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.player-card {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 116px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.player-main {
+  min-width: 0;
+}
+
+.player-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  margin-bottom: 8px;
+}
+
+.player-select-control {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.player-select-control input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: var(--red);
+}
+
+.team-panel.is-selecting .player-select-control {
+  display: inline-flex;
+}
+
+.team-panel.is-selecting .player-card {
+  border-color: #f2b6af;
+}
+
+.team-panel.is-selecting .player-card.is-selected {
+  background: #fff1f0;
+}
+
+.team-panel.is-selecting .player-form input,
+.team-panel.is-selecting .player-form [data-action="addPlayer"],
+.team-panel.is-selecting .bulk-row {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.player-avatar {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  color: #fff;
+  background: var(--text);
+  border-radius: 50%;
+  font-weight: 900;
+  text-align: center;
+  overflow: hidden;
+}
+
+.player-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.player-avatar span {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.name-text {
+  overflow-wrap: anywhere;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.player-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(86px, 1fr));
+  gap: 8px;
+}
+
+.stat-box {
+  min-height: 56px;
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  padding: 8px 10px;
+  background: var(--surface-strong);
+  border-radius: var(--radius);
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.stat-box span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.stat-box strong {
+  font-size: 24px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.stat-box.is-personal-score-plus {
+  background: #e7f7f2;
+  box-shadow: inset 0 0 0 2px rgba(15, 123, 99, 0.18);
+}
+
+.stat-box.is-personal-score-minus {
+  background: #eef2f7;
+  box-shadow: inset 0 0 0 2px rgba(100, 116, 139, 0.2);
+}
+
+.stat-box strong.is-personal-score-pop {
+  animation: personalScorePop 420ms ease-out;
+}
+
+@keyframes personalScorePop {
+  0% {
+    transform: scale(1);
+  }
+  38% {
+    transform: scale(1.18);
+  }
+  68% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.player-actions {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.score-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 58px);
+  gap: 6px;
+}
+
+.score-btn,
+.foul-btn {
+  min-width: 54px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform, filter;
+}
+
+.score-btn {
+  background: var(--green);
+}
+
+.minus-score-btn {
+  background: #64748b;
+}
+
+.score-btn:hover {
+  background: var(--green-dark);
+}
+
+.minus-score-btn:hover {
+  background: #475569;
+}
+
+.foul-btn {
+  background: var(--red);
+}
+
+.foul-btn:hover {
+  background: #a82828;
+}
+
+.score-btn:active,
+.foul-btn:active,
+.mini-btn:active,
+.icon-btn:active,
+.primary-btn:active,
+.secondary-btn:active,
+.ghost-btn:active {
+  transform: scale(0.96);
+}
+
+.score-btn.is-click-feedback,
+.foul-btn.is-click-feedback,
+.mini-btn.is-click-feedback {
+  animation: actionButtonTap 420ms ease-out;
+}
+
+.score-btn.is-click-feedback::after,
+.foul-btn.is-click-feedback::after,
+.mini-btn.is-click-feedback::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.55), transparent 58%);
+  animation: actionButtonFlash 420ms ease-out;
+  pointer-events: none;
+}
+
+.player-card.is-action-feedback {
+  animation: actionRowPulse 420ms ease-out;
+}
+
+.player-card.is-score-feedback {
+  box-shadow:
+    0 0 0 2px rgba(15, 123, 99, 0.24),
+    0 10px 22px rgba(15, 123, 99, 0.12);
+}
+
+.player-card.is-foul-feedback {
+  box-shadow:
+    0 0 0 2px rgba(201, 52, 52, 0.3),
+    0 10px 22px rgba(201, 52, 52, 0.14);
+}
+
+.player-card.is-denied-feedback,
+.score-btn.is-denied-feedback,
+.foul-btn.is-denied-feedback,
+.mini-btn.is-denied-feedback {
+  animation: deniedShake 420ms ease-out;
+}
+
+.player-card.is-denied-feedback {
+  box-shadow:
+    0 0 0 2px rgba(201, 52, 52, 0.34),
+    0 10px 22px rgba(201, 52, 52, 0.12);
+}
+
+.score-btn.is-denied-feedback,
+.foul-btn.is-denied-feedback,
+.mini-btn.is-denied-feedback {
+  filter: saturate(1.2) brightness(0.92);
+}
+
+@keyframes actionButtonTap {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  34% {
+    transform: scale(0.9);
+    filter: brightness(1.24);
+  }
+  72% {
+    transform: scale(1.04);
+    filter: brightness(1.1);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes actionButtonFlash {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.35);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes actionRowPulse {
+  0% {
+    transform: translateY(0);
+  }
+  42% {
+    transform: translateY(-1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes deniedShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  22% {
+    transform: translateX(-3px);
+  }
+  44% {
+    transform: translateX(3px);
+  }
+  66% {
+    transform: translateX(-2px);
+  }
+  82% {
+    transform: translateX(2px);
+  }
+}
+
+.correct-row {
+  display: grid;
+  grid-template-columns: repeat(4, 38px);
+  gap: 6px;
+}
+
+.fouled-out {
+  border-color: #efb0a8;
+  background: #fff7f6;
+}
+
+.fouled-out .name-text {
+  color: var(--red);
+  font-weight: 1000;
+}
+
+.side-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.summary-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 42px;
+  padding: 9px 11px;
+  background: var(--surface-strong);
+  border-radius: var(--radius);
+}
+
+.summary-item span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.summary-item strong {
+  text-align: right;
+  font-size: 15px;
+}
+
+.game-log {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  max-height: 470px;
+  overflow: auto;
+  margin-top: 12px;
+  padding-right: 4px;
+}
+
+.log-entry {
+  display: grid;
+  gap: 3px;
+  padding: 9px 10px;
+  background: var(--surface-strong);
+  border-left: 4px solid var(--green);
+  border-radius: 6px;
+}
+
+.log-entry strong {
+  font-size: 13px;
+}
+
+.log-entry span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translate(-50%, 16px);
+  min-width: 220px;
+  max-width: calc(100% - 32px);
+  padding: 12px 16px;
+  color: #fff;
+  background: rgba(23, 32, 51, 0.94);
+  border-radius: var(--radius);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+  z-index: 10;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+svg[data-icon] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.4;
+  flex: 0 0 auto;
+}
+
+.record-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.55);
+  z-index: 30;
+}
+
+.record-dialog {
+  width: min(100%, 560px);
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.record-dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.record-dialog p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.record-code-area {
+  width: 100%;
+  min-height: 180px;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.record-code-area.operation-log-area {
+  min-height: 320px;
+  font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+}
+
+.record-dialog-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.mobile-table-head {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .score-band {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-center,
+  .team-panel,
+  .side-panel {
+    grid-column: 1 / -1;
+  }
+
+  .side-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    background: #f5f7fb;
+  }
+
+  body::before {
+    background-position:
+      calc(100% + 70px) 46px,
+      -120px calc(100% - 12px);
+    background-size:
+      230px auto,
+      320px auto;
+    opacity: 0.045;
+  }
+
+  .app-shell {
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px;
+    overflow: hidden;
+  }
+
+  .topbar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 0;
+  }
+
+  .brand-lockup {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 5px;
+  }
+
+  .brand-copy {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .eyebrow {
+    display: none;
+  }
+
+  .brand-title {
+    width: clamp(66px, calc(100vw - 286px), 132px);
+    max-width: none;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .brand-title-track {
+    --title-scroll-gap: 18px;
+    --title-scroll-half-gap: 9px;
+    animation: brandTitleScroll 7s linear infinite;
+  }
+
+  .brand-title-track span + span {
+    display: inline;
+  }
+
+  .top-actions {
+    flex: 0 0 auto;
+    gap: 2px;
+    justify-content: flex-end;
+  }
+
+  .top-actions .ghost-btn {
+    width: 34px;
+    min-height: 34px;
+    padding: 0;
+  }
+
+  .top-actions #undoBtn {
+    width: 48px;
+    min-height: 42px;
+  }
+
+  .top-actions #topRestoreBtn {
+    width: 42px;
+    min-height: 42px;
+  }
+
+  .top-actions .ghost-btn span {
+    display: none;
+  }
+
+  .top-actions #topRestoreBtn span {
+    display: none;
+  }
+
+  .top-actions #topRestoreBtn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .record-dialog {
+    max-height: calc(100svh - 24px);
+  }
+
+  .record-code-area.operation-log-area {
+    min-height: min(46svh, 360px);
+    resize: none;
+  }
+
+  .score-band {
+    flex: 0 0 auto;
+    display: block;
+    gap: 6px;
+    margin-bottom: 0;
+  }
+
+  .team-score {
+    overflow: visible;
+    min-height: 72px;
+    gap: 2px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  .team-score label {
+    display: none;
+  }
+
+  .team-name-input {
+    min-height: 26px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .team-score strong {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .team-score .score-burst {
+    right: 8px;
+    top: 30px;
+    padding: 0;
+    font-size: 34px;
+  }
+
+  .team-score span {
+    font-size: 11px;
+  }
+
+  .game-center {
+    grid-column: 1 / -1;
+    order: 3;
+    min-height: 36px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .game-center > label,
+  #gameTitle,
+  .game-fields {
+    display: none;
+  }
+
+  .status-row {
+    display: block;
+  }
+
+  #finishBtn {
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: 7px;
+    font-size: 16px;
+  }
+
+  #finishBtn svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .result-strip {
+    flex: 0 0 auto;
+    min-height: 28px;
+    margin-bottom: 0;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .offline-note {
+    display: none;
+  }
+
+  .workspace-grid {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+    overflow: auto;
+  }
+
+  .side-panel {
+    display: none;
+  }
+
+  .team-panel {
+    flex: 0 0 auto;
+    min-height: 0;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: none;
+  }
+
+  .team-header {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 8px 8px 0 0;
+    background: #fff;
+  }
+
+  .team-header h2 {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .team-header p,
+  .stat-chips {
+    display: none;
+  }
+
+  .bulk-row {
+    display: none;
+  }
+
+  .player-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px 40px;
+    gap: 4px;
+    padding: 6px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--line);
+    background: #fff;
+  }
+
+  .player-form input {
+    min-height: 32px;
+    padding: 0 7px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+
+  .player-form button {
+    min-height: 32px;
+    padding: 0;
+    border-radius: 6px;
+  }
+
+  .player-form button span {
+    display: none;
+  }
+
+  .mobile-table-head {
+    min-height: 30px;
+    display: grid;
+    grid-template-columns: minmax(56px, 1fr) 30px 30px minmax(218px, 1.85fr);
+    align-items: center;
+    padding: 0 6px;
+    border-bottom: 1px solid var(--line);
+    background: #f0f4f8;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .mobile-table-head span:first-child {
+    padding-left: 4px;
+    text-align: left;
+  }
+
+  .player-list {
+    gap: 0;
+  }
+
+  .player-card {
+    min-height: 52px;
+    display: grid;
+    grid-template-columns: minmax(56px, 1fr) 30px 30px minmax(218px, 1.85fr);
+    align-items: center;
+    gap: 0;
+    padding: 0 6px;
+    border: 0;
+    border-bottom: 1px solid #e8edf3;
+    border-radius: 0;
+    background: #fff;
+  }
+
+  .player-card:nth-child(even) {
+    background: #f6f9fc;
+  }
+
+  .team-panel.is-selecting .player-card:nth-child(even) {
+    background: #fff;
+  }
+
+  .team-panel.is-selecting .player-card.is-selected,
+  .team-panel.is-selecting .player-card.is-selected:nth-child(even) {
+    background: #fff1f0;
+  }
+
+  .player-main,
+  .player-stats {
+    display: contents;
+  }
+
+  .player-name {
+    grid-column: 1;
+    min-width: 0;
+    gap: 4px;
+    margin-bottom: 0;
+  }
+
+  .player-select-control input {
+    width: 24px;
+    height: 24px;
+  }
+
+  .player-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .name-text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .stat-box {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .stat-box.is-personal-score-plus {
+    background: rgba(15, 123, 99, 0.1);
+  }
+
+  .stat-box.is-personal-score-minus {
+    background: rgba(100, 116, 139, 0.14);
+  }
+
+  .stat-box span {
+    display: none;
+  }
+
+  .stat-box strong {
+    font-size: 15px;
+  }
+
+  .player-actions {
+    grid-column: 4;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(38px, 1fr));
+    gap: 4px;
+  }
+
+  .score-actions,
+  .button-row {
+    display: contents;
+  }
+
+  .correct-row {
+    display: none;
+  }
+
+  .score-btn,
+  .foul-btn {
+    min-width: 0;
+    min-height: 40px;
+    width: 100%;
+    padding: 0;
+    border-radius: 7px;
+    font-size: 14px;
+  }
+
+  .foul-btn i,
+  .foul-btn svg {
+    display: none;
+  }
+
+  .foul-btn span {
+    font-size: 0;
+  }
+
+  .foul-btn span::before {
+    content: "犯+1";
+    font-size: 14px;
+  }
+
+  .empty-state {
+    min-height: 80px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: #fff;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-title {
+    width: clamp(46px, calc(100vw - 270px), 86px);
+    font-size: 12px;
+  }
+
+  .top-actions .ghost-btn {
+    width: 30px;
+    min-height: 32px;
+  }
+
+  .top-actions #undoBtn {
+    width: 40px;
+    min-height: 38px;
+  }
+
+  .top-actions #topRestoreBtn {
+    width: 36px;
+    min-height: 38px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .score-band {
+    grid-template-columns: 1fr;
+  }
+
+  .score-band > .team-score {
+    display: none;
+  }
+
+  .team-tabs {
+    display: flex;
+  }
+
+  .team-panel:not(.is-active-team) {
+    display: none;
+  }
+
+  .team-panel.home-team.is-active-team {
+    border-color: rgba(0, 140, 140, 0.36);
+    background: var(--team-home-soft);
+  }
+
+  .team-panel.away-team.is-active-team {
+    border-color: rgba(139, 61, 255, 0.34);
+    background: var(--team-away-soft);
+  }
+
+  .team-panel.home-team.is-active-team .team-header,
+  .team-panel.home-team.is-active-team .player-form,
+  .team-panel.home-team.is-active-team .mobile-table-head,
+  .team-panel.home-team.is-active-team .player-card,
+  .team-panel.home-team.is-active-team .player-card:nth-child(even),
+  .team-panel.home-team.is-active-team .empty-state {
+    background: var(--team-home-soft);
+  }
+
+  .team-panel.away-team.is-active-team .team-header,
+  .team-panel.away-team.is-active-team .player-form,
+  .team-panel.away-team.is-active-team .mobile-table-head,
+  .team-panel.away-team.is-active-team .player-card,
+  .team-panel.away-team.is-active-team .player-card:nth-child(even),
+  .team-panel.away-team.is-active-team .empty-state {
+    background: var(--team-away-soft);
+  }
+}
+
+@media (max-width: 760px) {
+  .team-tabs {
+    margin-top: 8px;
+  }
+
+  .team-tab {
+    min-height: 62px;
+    padding: 0 8px 12px;
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .team-tab::before {
+    left: 18%;
+    right: 18%;
+    height: 4px;
+  }
+
+  .team-tab-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .team-tab-score {
+    font-size: 26px;
+  }
+}
+
+
+.offline-note {
+  margin: -4px 0 14px;
+  padding: 10px 12px;
+  color: #075b49;
+  background: #ecf8f4;
+  border: 1px solid #b9ded4;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+</style>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-copy">
+            <p class="eyebrow">Basketball Scorekeeper</p>
+            <h1 class="brand-title" aria-label="篮球记分牌">
+              <span class="brand-title-track" aria-hidden="true">
+                <span>篮球记分牌</span>
+                <span>篮球记分牌</span>
+              </span>
+            </h1>
+          </div>
+        </div>
+        <div class="top-actions" aria-label="比赛操作">
+          <button class="ghost-btn" id="saveBtn" type="button" title="导出记录码">
+            <i data-lucide="copy" aria-hidden="true"></i>
+            <span>导出</span>
+          </button>
+          <button class="ghost-btn" id="topRestoreBtn" type="button" title="导入记录码">
+            <i data-lucide="clipboard-paste" aria-hidden="true"></i>
+            <span>导入</span>
+          </button>
+          <button class="ghost-btn" id="logBtn" type="button" title="查看操作记录">
+            <i data-lucide="file-text" aria-hidden="true"></i>
+            <span>记录</span>
+          </button>
+          <button class="ghost-btn" id="undoBtn" type="button" title="撤销上一步">
+            <i data-lucide="undo-2" aria-hidden="true"></i>
+            <span>撤销</span>
+          </button>
+          <button class="ghost-btn danger" id="resetBtn" type="button" title="清空当前比赛">
+            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+            <span>重开</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="score-band" aria-label="当前比分">
+        <article class="team-score home">
+          <label for="homeName">左侧队名</label>
+          <input id="homeName" class="team-name-input" type="text" />
+          <strong id="homeScore">0</strong>
+          <span id="homeMeta">0 名球员 · 0 次犯规</span>
+        </article>
+
+        <div class="game-center">
+          <label for="gameTitle">比赛名称</label>
+          <input id="gameTitle" type="text" />
+          <div class="game-fields">
+            <input id="gameDate" type="date" aria-label="比赛日期" />
+            <input id="gameVenue" type="text" placeholder="默认场地" aria-label="比赛场地" />
+          </div>
+          <div class="status-row">
+            <button class="primary-btn" id="finishBtn" type="button">
+              <i data-lucide="flag" aria-hidden="true"></i>
+              <span>结束比赛</span>
+            </button>
+          </div>
+          <div class="team-tabs" id="teamTabs" role="tablist" aria-label="切换记分队伍">
+            <button class="team-tab home-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="homePanel" data-team-tab="home">
+              <span class="team-tab-icon" aria-hidden="true">A</span>
+              <span class="team-tab-name">队伍A</span>
+              <strong class="team-tab-score">0</strong>
+            </button>
+            <button class="team-tab away-tab" type="button" role="tab" aria-selected="false" aria-controls="awayPanel" data-team-tab="away">
+              <span class="team-tab-icon" aria-hidden="true">B</span>
+              <span class="team-tab-name">队伍B</span>
+              <strong class="team-tab-score">0</strong>
+            </button>
+          </div>
+        </div>
+
+        <article class="team-score away">
+          <label for="awayName">右侧队名</label>
+          <input id="awayName" class="team-name-input" type="text" />
+          <strong id="awayScore">0</strong>
+          <span id="awayMeta">0 名球员 · 0 次犯规</span>
+        </article>
+      </section>
+
+      <section class="result-strip" id="resultStrip" aria-live="polite"></section>
+
+      <section class="offline-note" aria-label="offline notice">
+        &#25163;&#26426;&#21333;&#26426;&#29256;&#65306;&#26080;&#38656;&#30005;&#33041;&#21644;&#32593;&#32476;&#12290;&#25968;&#25454;&#20250;&#33258;&#21160;&#20445;&#23384;&#22312;&#24403;&#21069;&#25163;&#26426;&#27983;&#35272;&#22120;&#37324;&#65307;&#25442;&#25163;&#26426;&#25110;&#28165;&#29702;&#27983;&#35272;&#22120;&#25968;&#25454;&#21069;&#65292;&#35831;&#20808;&#28857;&#8220;&#20445;&#23384;&#27604;&#36187;&#35760;&#24405;&#8221;&#12290;
+      </section>
+<section class="workspace-grid" aria-label="记分操作区">
+        <div class="team-panel" id="homePanel"></div>
+        <div class="team-panel" id="awayPanel"></div>
+        <aside class="side-panel" aria-label="比赛记录和结果">
+          <section class="summary-panel">
+            <div class="section-heading">
+              <h2>统计汇总</h2>
+              <button class="icon-btn" id="copySummaryBtn" type="button" title="复制比赛结果">
+                <i data-lucide="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div id="summaryList" class="summary-list"></div>
+            <button class="secondary-btn full" id="exportCsvBtn" type="button">
+              <i data-lucide="download" aria-hidden="true"></i>
+              <span>导出球员统计 CSV</span>
+            </button>
+            <div class="backup-actions">
+              <button class="secondary-btn" id="backupBtn" type="button">
+                <i data-lucide="save" aria-hidden="true"></i>
+                <span>保存比赛记录</span>
+              </button>
+              <button class="secondary-btn" id="restoreBtn" type="button">
+                <i data-lucide="upload" aria-hidden="true"></i>
+                <span>打开比赛记录</span>
+              </button>
+              <input id="restoreInput" type="file" accept="application/json,.json" hidden />
+            </div>
+            <div class="backup-actions">
+              <button class="secondary-btn" id="copyRecordCodeBtn" type="button">
+                <i data-lucide="copy" aria-hidden="true"></i>
+                <span>复制记录码</span>
+              </button>
+              <button class="secondary-btn" id="importRecordCodeBtn" type="button">
+                <i data-lucide="clipboard-paste" aria-hidden="true"></i>
+                <span>导入记录码</span>
+              </button>
+            </div>
+            <div class="preset-box">
+              <div class="section-heading compact">
+                <h2>预设阵容</h2>
+              </div>
+              <div class="preset-actions">
+                <input id="presetNameInput" type="text" placeholder="预设名称" aria-label="预设名称" />
+                <button class="secondary-btn" id="savePresetBtn" type="button">
+                  <i data-lucide="bookmark-plus" aria-hidden="true"></i>
+                  <span>保存当前阵容</span>
+                </button>
+              </div>
+              <div class="preset-actions">
+                <select id="presetSelect" aria-label="选择预设阵容"></select>
+                <button class="secondary-btn" id="loadPresetBtn" type="button">
+                  <i data-lucide="users" aria-hidden="true"></i>
+                  <span>加载预设</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="log-panel">
+            <div class="section-heading">
+              <h2>操作记录</h2>
+              <button class="icon-btn" id="clearLogBtn" type="button" title="清空操作记录">
+                <i data-lucide="trash-2" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div id="gameLog" class="game-log" aria-live="polite"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+// Generic demo roster without real names or avatars.
+window.BASKETBALL_PLAYER_CONFIG = {
+  version: 1,
+  presets: [
+    {
+      id: "demo-roster",
+      name: "示例阵容",
+      createdAt: "2026-06-10T00:00:00.000Z",
+      teams: [
+        {
+          id: "home",
+          name: "队伍A",
+          players: [
+            { name: "球员01", avatar: "" },
+            { name: "球员02", avatar: "" },
+            { name: "球员03", avatar: "" },
+            { name: "球员04", avatar: "" },
+            { name: "球员05", avatar: "" },
+            { name: "球员06", avatar: "" }
+          ]
+        },
+        {
+          id: "away",
+          name: "队伍B",
+          players: [
+            { name: "球员07", avatar: "" },
+            { name: "球员08", avatar: "" },
+            { name: "球员09", avatar: "" },
+            { name: "球员10", avatar: "" },
+            { name: "球员11", avatar: "" },
+            { name: "球员12", avatar: "" }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+</script>
+<script>
+const STORAGE_KEY = "basketball-scorekeeper-demo-v1";
+const PLAYER_CONFIG =
+  typeof window !== "undefined" && window.BASKETBALL_PLAYER_CONFIG ? window.BASKETBALL_PLAYER_CONFIG : {};
+const ROSTER_VERSION = Number(PLAYER_CONFIG.version) || 1;
+const MAX_HISTORY = 30;
+const FOUL_LIMIT = 5;
+const ACTION_FEEDBACK_MS = 420;
+const TEAM_SCORE_FEEDBACK_MS = 780;
+const CONFIG_PRESET_ID = "demo-roster";
+const CONFIG_PRESET_NAME = "示例阵容";
+const FALLBACK_TEAM_NAMES = ["队伍A", "队伍B"];
+const BUILT_IN_PRESETS = buildConfigPresets(PLAYER_CONFIG.presets);
+const DEFAULT_TEAM_NAMES = buildDefaultTeamNames(BUILT_IN_PRESETS[0]);
+const LEGACY_DEFAULT_TEAM_NAMES = [
+  ["主队", "队伍A", "队A", DEFAULT_TEAM_NAMES[0]],
+  ["客队", "队伍B", "队B", DEFAULT_TEAM_NAMES[1]],
+];
+const ICONS = {
+  save: '<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/>',
+  "undo-2": '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
+  "rotate-ccw": '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+  flag: '<path d="M4 22V4"/><path d="M4 4h12l-1 5 1 5H4"/>',
+  copy: '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+  "clipboard-paste": '<path d="M15 2H9a2 2 0 0 0-2 2v2h10V4a2 2 0 0 0-2-2Z"/><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><path d="M8 14h8"/><path d="M12 10v8"/>',
+  "file-text": '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v6h6"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>',
+  download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/>',
+  "trash-2": '<path d="M3 6h18"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><path d="M19 6l-1 14c-.1 1-1 2-2 2H8c-1 0-1.9-1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/>',
+  "user-plus": '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/>',
+  "user-minus": '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6"/>',
+  "bookmark-plus": '<path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h8"/><path d="M17 3v6"/><path d="M20 6h-6"/>',
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  "arrow-left-right": '<path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/>',
+  "list-plus": '<path d="M11 12H3"/><path d="M16 6H3"/><path d="M16 18H3"/><path d="M18 9v6"/><path d="M21 12h-6"/>',
+  "folder-open": '<path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6A2 2 0 0 1 18.47 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2A2 2 0 0 0 12.09 6H20a2 2 0 0 1 2 2v2"/>',
+  upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/>',
+  hand: '<path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v8"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M6 14v-2a2 2 0 0 0-4 0v2c0 4.4 3.6 8 8 8h2a8 8 0 0 0 8-8v-3a2 2 0 0 0-4 0v1"/>',
+  minus: '<path d="M5 12h14"/>',
+  "shield-minus": '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3z"/><path d="M9 12h6"/>',
+  "user-x": '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 8 5 5"/><path d="m22 8-5 5"/>',
+  circle: '<circle cx="12" cy="12" r="9"/>',
+};
+
+const $ = (selector) => document.querySelector(selector);
+function normalizeConfigPlayer(player = {}) {
+  const name = String(player?.name || "").trim();
+  if (!name) return null;
+  return {
+    name,
+    avatar: typeof player?.avatar === "string" ? player.avatar : "",
+  };
+}
+
+function buildFallbackPreset() {
+  return {
+    id: CONFIG_PRESET_ID,
+    name: CONFIG_PRESET_NAME,
+    createdAt: new Date().toISOString(),
+    teams: [
+      { id: "home", name: FALLBACK_TEAM_NAMES[0], players: [] },
+      { id: "away", name: FALLBACK_TEAM_NAMES[1], players: [] },
+    ],
+  };
+}
+
+function buildConfigPresets(presets) {
+  const normalized = (Array.isArray(presets) ? presets : [])
+    .map((preset, presetIndex) => {
+      if (!Array.isArray(preset?.teams) || !preset.teams.length) return null;
+      const teams = [0, 1].map((teamIndex) => {
+        const sourceTeam = preset.teams[teamIndex] || {};
+        return {
+          id: teamIndex === 0 ? "home" : "away",
+          name: String(sourceTeam.name || FALLBACK_TEAM_NAMES[teamIndex]).trim() || FALLBACK_TEAM_NAMES[teamIndex],
+          players: (Array.isArray(sourceTeam.players) ? sourceTeam.players : [])
+            .map(normalizeConfigPlayer)
+            .filter(Boolean),
+        };
+      });
+      return {
+        id: String(preset.id || `${CONFIG_PRESET_ID}-${presetIndex + 1}`),
+        name: String(preset.name || CONFIG_PRESET_NAME).trim() || CONFIG_PRESET_NAME,
+        createdAt: preset.createdAt || new Date().toISOString(),
+        teams,
+      };
+    })
+    .filter(Boolean);
+  return normalized.length ? normalized : [buildFallbackPreset()];
+}
+
+function buildDefaultTeamNames(preset) {
+  return [preset?.teams?.[0]?.name || FALLBACK_TEAM_NAMES[0], preset?.teams?.[1]?.name || FALLBACK_TEAM_NAMES[1]];
+}
+
+const defaultState = () => ({
+  game: {
+    title: "篮球记分牌",
+    date: new Date().toISOString().slice(0, 10),
+    venue: "默认场地",
+    phase: "赛前",
+    finalized: false,
+  },
+  teams: teamsFromBuiltInPreset(),
+  savedAt: "",
+  rosterVersion: ROSTER_VERSION,
+  presets: builtInPresets(),
+  log: [],
+  history: [],
+});
+
+let state = loadState();
+let toastTimer = null;
+const uiState = {
+  removeTeamId: null,
+  activeTeamId: "home",
+  selectedPlayerIds: new Set(),
+};
+
+function normalizeDefaultTeamNames(teams) {
+  return teams.map((team, index) => ({
+    ...team,
+    name: isDefaultTeamName(team.name, index) ? DEFAULT_TEAM_NAMES[index] : team.name,
+  }));
+}
+
+function isDefaultTeamName(name, index) {
+  const value = String(name || "").trim();
+  return !value || value === DEFAULT_TEAM_NAMES[index] || LEGACY_DEFAULT_TEAM_NAMES[index].includes(value);
+}
+
+function clampFouls(value) {
+  return Math.min(FOUL_LIMIT, Math.max(0, Number(value) || 0));
+}
+
+function normalizeTeamStats(teams = []) {
+  return teams.map((team) => ({
+    ...team,
+    players: (team.players || []).map((player) => ({
+      ...player,
+      points: Math.max(0, Number(player.points) || 0),
+      fouls: clampFouls(player.fouls),
+    })),
+  }));
+}
+
+function normalizeLoadedTeams(teams, rosterVersion = 0) {
+  const normalized = normalizeTeamStats(normalizeDefaultTeamNames(teams));
+  if (rosterVersion >= ROSTER_VERSION) return normalized;
+  return normalized.map((team, index) => {
+    if (!isDefaultTeamName(team.name, index)) return team;
+    const templatePlayers = BUILT_IN_PRESETS[0]?.teams[index]?.players || [];
+    const existingPlayers = Array.isArray(team.players) ? team.players : [];
+    const existingByName = new Map(
+      existingPlayers
+        .map((player) => [String(player.name || "").trim().toLowerCase(), player])
+        .filter(([name]) => Boolean(name))
+    );
+    if (index === 0) {
+      return {
+        ...team,
+        name: DEFAULT_TEAM_NAMES[index],
+        players: templatePlayers.map((player) => {
+          const existing = existingByName.get(String(player.name || "").trim().toLowerCase());
+          return {
+            id: uid(),
+            name: player.name,
+            avatar: player.avatar || existing?.avatar || "",
+            points: Math.max(0, Number(existing?.points) || 0),
+            fouls: clampFouls(existing?.fouls),
+          };
+        }),
+      };
+    }
+    const existingNames = new Set(existingPlayers.map((player) => String(player.name || "").trim().toLowerCase()).filter(Boolean));
+    const missingPlayers = templatePlayers
+      .filter((player) => !existingNames.has(String(player.name || "").trim().toLowerCase()))
+      .map((player) => ({
+        id: uid(),
+        name: player.name,
+        avatar: player.avatar || "",
+        points: 0,
+        fouls: 0,
+      }));
+    return {
+      ...team,
+      name: DEFAULT_TEAM_NAMES[index],
+      players: [...existingPlayers, ...missingPlayers],
+    };
+  });
+}
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return defaultState();
+    const parsed = JSON.parse(saved);
+    const fallback = defaultState();
+    const savedTeams = parsed.teams?.length === 2 ? parsed.teams : null;
+    const teams = normalizeLoadedTeams(savedTeams && hasRoster(savedTeams) ? savedTeams : fallback.teams, parsed.rosterVersion || 0);
+    const presets = mergePresets(parsed.presets, teams);
+    return {
+      ...fallback,
+      ...parsed,
+      game: {
+        ...fallback.game,
+        ...(parsed.game || {}),
+        title: parsed.game?.title || "篮球记分牌",
+        venue: parsed.game?.venue || "默认场地",
+      },
+      teams,
+      savedAt: parsed.savedAt || "",
+      rosterVersion: ROSTER_VERSION,
+      presets,
+      log: Array.isArray(parsed.log) ? parsed.log : [],
+      history: Array.isArray(parsed.history) ? parsed.history.map(compactHistoryEntry) : [],
+    };
+  } catch {
+    return defaultState();
+  }
+}
+
+function saveState() {
+  state.savedAt = new Date().toISOString();
+  const persist = () => localStorage.setItem(STORAGE_KEY, JSON.stringify(compactStateForStorage(state)));
+  try {
+    persist();
+  } catch {
+    state.history = state.history.slice(0, 8).map(compactHistoryEntry);
+    try {
+      persist();
+    } catch {
+      state.history = [];
+      try {
+        persist();
+      } catch {
+        // Keep scoring usable even when the browser refuses more local storage.
+      }
+    }
+  }
+}
+
+function uid() {
+  if (window.crypto?.randomUUID) return window.crypto.randomUUID();
+  return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function clone(value) {
+  return JSON.parse(JSON.stringify(value));
+}
+
+function compactTeamsForHistory(teams = []) {
+  return teams.map((team) => ({
+    id: team.id,
+    name: team.name,
+    players: (team.players || []).map((player) => ({
+      id: player.id,
+      name: player.name,
+      points: Number(player.points) || 0,
+      fouls: clampFouls(player.fouls),
+    })),
+  }));
+}
+
+function compactSnapshot(source) {
+  return {
+    game: clone(source.game || {}),
+    teams: compactTeamsForHistory(source.teams || []),
+    savedAt: source.savedAt || "",
+    rosterVersion: source.rosterVersion || ROSTER_VERSION,
+  };
+}
+
+function compactHistoryEntry(entry) {
+  if (!entry?.snapshot) return entry;
+  return {
+    label: entry.label,
+    at: entry.at,
+    snapshot: compactSnapshot(entry.snapshot),
+  };
+}
+
+function compactStateForStorage(source) {
+  return {
+    ...source,
+    history: (source.history || []).map(compactHistoryEntry),
+  };
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function avatarInitial(name) {
+  const cleanName = String(name || "").trim();
+  const chinese = cleanName.match(/[\u4e00-\u9fff]/g);
+  if (chinese?.length) return chinese[chinese.length - 1];
+  const letters = cleanName.match(/[A-Za-z0-9]+/g) || [];
+  if (!letters.length) return "?";
+  return letters
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+}
+
+function playerAvatarHtml(player) {
+  if (player.avatar) {
+    return `<img src="${escapeHtml(player.avatar)}" alt="" loading="lazy" />`;
+  }
+  return `<span>${escapeHtml(avatarInitial(player.name))}</span>`;
+}
+
+function encodeText(value) {
+  return btoa(unescape(encodeURIComponent(value)));
+}
+
+function decodeText(value) {
+  return decodeURIComponent(escape(atob(value)));
+}
+
+function getTeam(teamId) {
+  return state.teams.find((team) => team.id === teamId);
+}
+
+function getPlayer(teamId, playerId) {
+  return getTeam(teamId)?.players.find((player) => player.id === playerId);
+}
+
+function teamScore(team) {
+  return team.players.reduce((sum, player) => sum + player.points, 0);
+}
+
+function teamFouls(team) {
+  return team.players.reduce((sum, player) => sum + clampFouls(player.fouls), 0);
+}
+
+function ensureActiveTeamId() {
+  if (!state.teams.some((team) => team.id === uiState.activeTeamId)) {
+    uiState.activeTeamId = state.teams[0]?.id || "home";
+  }
+  return uiState.activeTeamId;
+}
+
+function teamsFromBuiltInPreset() {
+  const preset = BUILT_IN_PRESETS[0];
+  if (!preset) {
+    return [
+      { id: "home", name: DEFAULT_TEAM_NAMES[0], players: [] },
+      { id: "away", name: DEFAULT_TEAM_NAMES[1], players: [] },
+    ];
+  }
+
+  return preset.teams.map((team, index) => ({
+    id: index === 0 ? "home" : "away",
+    name: team.name || DEFAULT_TEAM_NAMES[index],
+    players: (team.players || []).map((player) => ({
+      id: uid(),
+      name: player.name,
+      avatar: player.avatar || "",
+      points: 0,
+      fouls: 0,
+    })),
+  }));
+}
+
+function builtInPresets() {
+  return JSON.parse(JSON.stringify(BUILT_IN_PRESETS));
+}
+
+function mergePresets(savedPresets, teams) {
+  const merged = [];
+  const addPreset = (preset) => {
+    if (!preset?.name || !Array.isArray(preset.teams)) return;
+    const key = preset.id || preset.name;
+    if (merged.some((item) => (item.id || item.name) === key || item.name === preset.name)) return;
+    merged.push(preset);
+  };
+
+  builtInPresets().forEach(addPreset);
+  (Array.isArray(savedPresets) ? savedPresets : []).forEach(addPreset);
+  if (!merged.length) seedPresetFromTeams(teams).forEach(addPreset);
+  return merged;
+}
+
+function hasRoster(teams = state.teams) {
+  return teams.some((team) => Array.isArray(team.players) && team.players.length > 0);
+}
+
+function rosterFromTeams(teams = state.teams) {
+  return teams.map((team) => ({
+    id: team.id,
+    name: team.name,
+    players: team.players.map((player) => ({
+      name: player.name,
+      avatar: player.avatar || "",
+    })),
+  }));
+}
+
+function avatarMapFromTeams(teams = []) {
+  const lookup = new Map();
+  teams.forEach((team) => {
+    (team.players || []).forEach((player) => {
+      const name = String(player.name || "").trim().toLowerCase();
+      if (name && player.avatar && !lookup.has(name)) lookup.set(name, player.avatar);
+    });
+  });
+  return lookup;
+}
+
+function hydrateTeamAvatars(teams, fallbackTeams = state.teams) {
+  const lookup = avatarMapFromTeams([
+    ...fallbackTeams,
+    ...(BUILT_IN_PRESETS[0]?.teams || []),
+  ]);
+  return teams.map((team) => ({
+    ...team,
+    players: (team.players || []).map((player) => {
+      if (player.avatar) return player;
+      const name = String(player.name || "").trim().toLowerCase();
+      return {
+        ...player,
+        avatar: lookup.get(name) || "",
+      };
+    }),
+  }));
+}
+
+function seedPresetFromTeams(teams) {
+  if (!hasRoster(teams)) return [];
+  return [
+    {
+      id: uid(),
+      name: "当前阵容预设",
+      teams: rosterFromTeams(teams),
+      createdAt: new Date().toISOString(),
+    },
+  ];
+}
+
+function pushHistory(label) {
+  const snapshot = compactSnapshot(state);
+  state.history.unshift({ label, snapshot, at: new Date().toISOString() });
+  state.history = state.history.slice(0, MAX_HISTORY);
+}
+
+function addLog(text) {
+  state.log.unshift({
+    id: uid(),
+    text,
+    at: new Date().toISOString(),
+  });
+}
+
+function commit(label, mutate) {
+  pushHistory(label);
+  mutate();
+  addLog(label);
+  saveState();
+  render();
+}
+
+function vibrateTap(success = true) {
+  if (!navigator.vibrate) return;
+  navigator.vibrate(success ? 18 : [18, 24, 18]);
+}
+
+function actionSelector(action, points) {
+  if (action === "score") return `[data-action="score"][data-points="${points}"]`;
+  return `[data-action="${action}"]`;
+}
+
+function triggerActionFeedback(teamId, playerId, action, points) {
+  const card = document.querySelector(`.player-card[data-team-id="${teamId}"][data-player-id="${playerId}"]`);
+  const button = card?.querySelector(actionSelector(action, points));
+  const isFoul = action.toLowerCase().includes("foul");
+  const isScore = action.toLowerCase().includes("score");
+  const scoreStat = isScore ? card?.querySelector(".stat-box") : null;
+  const scoreNumber = scoreStat?.querySelector("strong");
+  card?.classList.add("is-action-feedback", isFoul ? "is-foul-feedback" : "is-score-feedback");
+  button?.classList.add("is-click-feedback");
+  scoreStat?.classList.add(points < 0 || action === "scoreMinus" ? "is-personal-score-minus" : "is-personal-score-plus");
+  scoreNumber?.classList.add("is-personal-score-pop");
+  vibrateTap(true);
+  window.setTimeout(() => {
+    card?.classList.remove("is-action-feedback", "is-score-feedback", "is-foul-feedback");
+    button?.classList.remove("is-click-feedback");
+    scoreStat?.classList.remove("is-personal-score-plus", "is-personal-score-minus");
+    scoreNumber?.classList.remove("is-personal-score-pop");
+  }, ACTION_FEEDBACK_MS);
+}
+
+function triggerTeamScoreFeedback(teamId, delta) {
+  const teamCard = document.querySelector(`.team-score.${teamId === "home" ? "home" : "away"}`);
+  const tab = document.querySelector(`[data-team-tab="${teamId}"]`);
+  const container = teamCard?.offsetParent ? teamCard : tab;
+  const score = container?.querySelector(teamCard?.offsetParent ? "strong" : ".team-tab-score");
+  if (!container || !score) return;
+  const previousBurst = container.querySelector(".score-burst");
+  previousBurst?.remove();
+  const burst = document.createElement("span");
+  burst.className = `score-burst ${delta < 0 ? "is-minus" : "is-plus"}`;
+  burst.textContent = `${delta > 0 ? "+" : ""}${delta}`;
+  container.appendChild(burst);
+  container.classList.add("is-score-celebrate", delta < 0 ? "is-score-minus" : "is-score-plus");
+  score.classList.add("is-score-number-pop");
+  window.setTimeout(() => {
+    burst.remove();
+    container.classList.remove("is-score-celebrate", "is-score-plus", "is-score-minus");
+    score.classList.remove("is-score-number-pop");
+  }, TEAM_SCORE_FEEDBACK_MS);
+}
+
+function triggerDeniedFeedback(button, card, message) {
+  showToast(message);
+  card?.classList.add("is-denied-feedback");
+  button?.classList.add("is-denied-feedback");
+  vibrateTap(false);
+  window.setTimeout(() => {
+    card?.classList.remove("is-denied-feedback");
+    button?.classList.remove("is-denied-feedback");
+  }, ACTION_FEEDBACK_MS);
+}
+
+function showToast(message) {
+  const toast = $("#toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
+function formatTime(iso) {
+  return new Intl.DateTimeFormat("zh-CN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  }).format(new Date(iso));
+}
+
+function formatDateTime(iso) {
+  if (!iso) return "尚未保存";
+  return new Intl.DateTimeFormat("zh-CN", {
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  }).format(new Date(iso));
+}
+
+function formatFullDateTime(iso) {
+  if (!iso) return "";
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  }).format(new Date(iso));
+}
+
+function fileTimestamp(date = new Date()) {
+  const pad = (value) => String(value).padStart(2, "0");
+  return [
+    date.getFullYear(),
+    pad(date.getMonth() + 1),
+    pad(date.getDate()),
+    "-",
+    pad(date.getHours()),
+    pad(date.getMinutes()),
+    pad(date.getSeconds()),
+  ].join("");
+}
+
+function leaderText() {
+  const [home, away] = state.teams;
+  const homeScore = teamScore(home);
+  const awayScore = teamScore(away);
+  if (homeScore === awayScore) return `当前 ${homeScore}:${awayScore}，双方战平`;
+  const leader = homeScore > awayScore ? home : away;
+  const lead = Math.abs(homeScore - awayScore);
+  return `当前 ${homeScore}:${awayScore}，${leader.name} 领先 ${lead} 分`;
+}
+
+function finalText() {
+  const [home, away] = state.teams;
+  const homeScore = teamScore(home);
+  const awayScore = teamScore(away);
+  if (!state.game.finalized) return leaderText();
+  if (homeScore === awayScore) return `比赛结束：${home.name} ${homeScore}:${awayScore} ${away.name}，平局`;
+  const winner = homeScore > awayScore ? home : away;
+  const loser = homeScore > awayScore ? away : home;
+  return `比赛结束：${winner.name} ${Math.max(homeScore, awayScore)}:${Math.min(homeScore, awayScore)} ${loser.name}，${winner.name} 获胜`;
+}
+
+function topScorer() {
+  const players = state.teams.flatMap((team) =>
+    team.players.map((player) => ({ ...player, teamName: team.name })),
+  );
+  const sorted = players.sort((a, b) => b.points - a.points);
+  return sorted[0]?.points > 0 ? `${sorted[0].teamName} · ${sorted[0].name} ${sorted[0].points} 分` : "暂无";
+}
+
+function foulWarning() {
+  const players = state.teams.flatMap((team) =>
+    team.players
+      .filter((player) => clampFouls(player.fouls) >= FOUL_LIMIT - 1)
+      .map((player) => `${team.name} · ${player.name} ${clampFouls(player.fouls)} 犯`),
+  );
+  return players.length ? players.join("；") : "暂无";
+}
+
+function buildSummaryText() {
+  const [home, away] = state.teams;
+  const lines = [
+    `${state.game.title}`,
+    `日期：${state.game.date || "未填写"}`,
+    `场地：${state.game.venue || "未填写"}`,
+    `比分：${home.name} ${teamScore(home)}:${teamScore(away)} ${away.name}`,
+    `结果：${finalText()}`,
+    "",
+    "球员统计：",
+  ];
+
+  state.teams.forEach((team) => {
+    lines.push(`${team.name}：`);
+    if (!team.players.length) {
+      lines.push("  暂无球员");
+      return;
+    }
+    team.players.forEach((player) => {
+      lines.push(`  ${player.name}：${player.points} 分，${player.fouls} 犯规`);
+    });
+  });
+
+  return lines.join("\n");
+}
+
+function buildOperationLogText() {
+  const [home, away] = state.teams;
+  const lines = [
+    `${state.game.title}`,
+    `日期：${state.game.date || "未填写"}`,
+    `场地：${state.game.venue || "未填写"}`,
+    `比分：${home.name} ${teamScore(home)}:${teamScore(away)} ${away.name}`,
+    `操作记录：${state.log.length} 条`,
+    "",
+  ];
+
+  if (!state.log.length) {
+    lines.push("暂无操作记录");
+    return lines.join("\n");
+  }
+
+  state.log
+    .slice()
+    .reverse()
+    .forEach((entry, index) => {
+      lines.push(`${index + 1}. ${formatFullDateTime(entry.at)}　${entry.text}`);
+    });
+
+  return lines.join("\n");
+}
+
+function showOperationLog() {
+  const dialog = createRecordDialog(
+    "操作记录",
+    "本场操作记录会跟随记录码和比赛记录文件一起保存，也可以手动复制下面内容。",
+  );
+  const area = dialog.querySelector(".record-code-area");
+  area.classList.add("operation-log-area");
+  area.readOnly = true;
+  area.value = buildOperationLogText();
+  dialog.querySelector(".record-dialog-actions").innerHTML = `
+    <button class="primary-btn" type="button" data-dialog-action="copy-log">复制记录</button>
+    <button class="secondary-btn" type="button" data-dialog-action="close">关闭</button>
+  `;
+  dialog.querySelector('[data-dialog-action="copy-log"]').addEventListener("click", async () => {
+    const ok = await copyText(area.value);
+    showToast(ok ? "操作记录已复制" : "请长按操作记录手动复制");
+  });
+  showToast("操作记录已打开");
+}
+
+function renderScoreboard() {
+  const [home, away] = state.teams;
+  const activeTeamId = ensureActiveTeamId();
+  $("#homeName").value = home.name;
+  $("#awayName").value = away.name;
+  $("#homeScore").textContent = teamScore(home);
+  $("#awayScore").textContent = teamScore(away);
+  $("#homeMeta").textContent = `${home.players.length} 名球员 · ${teamFouls(home)} 次犯规`;
+  $("#awayMeta").textContent = `${away.players.length} 名球员 · ${teamFouls(away)} 次犯规`;
+
+  $("#gameTitle").value = state.game.title;
+  $("#gameDate").value = state.game.date;
+  $("#gameVenue").value = state.game.venue;
+  $("#finishBtn span").textContent = state.game.finalized ? "继续修改" : "结束比赛";
+
+  const resultStrip = $("#resultStrip");
+  resultStrip.textContent = finalText();
+  resultStrip.classList.toggle("is-live", !state.game.finalized);
+  $("#undoBtn").disabled = state.history.length === 0;
+
+  document.querySelectorAll("[data-team-tab]").forEach((tab) => {
+    const team = state.teams.find((item) => item.id === tab.dataset.teamTab);
+    if (!team) return;
+    tab.classList.toggle("is-active", team.id === activeTeamId);
+    tab.setAttribute("aria-selected", String(team.id === activeTeamId));
+    tab.querySelector(".team-tab-name").textContent = team.name;
+    tab.querySelector(".team-tab-score").textContent = teamScore(team);
+  });
+}
+
+function selectedPlayersForTeam(team) {
+  if (uiState.removeTeamId !== team.id) return [];
+  return team.players.filter((player) => uiState.selectedPlayerIds.has(player.id));
+}
+
+function playerCard(team, player) {
+  const fouls = clampFouls(player.fouls);
+  const fouledOut = fouls >= FOUL_LIMIT;
+  const selecting = uiState.removeTeamId === team.id;
+  const selected = selecting && uiState.selectedPlayerIds.has(player.id);
+  return `
+    <article class="player-card ${fouledOut ? "fouled-out" : ""} ${selected ? "is-selected" : ""}" data-team-id="${team.id}" data-player-id="${player.id}">
+      <div class="player-main">
+        <div class="player-name">
+          <label class="player-select-control" title="选择删除">
+            <input type="checkbox" data-player-select data-team-id="${team.id}" data-player-id="${player.id}" ${selected ? "checked" : ""} />
+            <span aria-hidden="true"></span>
+          </label>
+          <span class="player-avatar">${playerAvatarHtml(player)}</span>
+          <span class="name-text">${escapeHtml(player.name)}</span>
+        </div>
+        <div class="player-stats">
+          <div class="stat-box">
+            <span>得分</span>
+            <strong>${player.points}</strong>
+          </div>
+          <div class="stat-box">
+            <span>犯规${fouledOut ? " · 离场" : ""}</span>
+            <strong>${fouls}</strong>
+          </div>
+        </div>
+      </div>
+      <div class="player-actions">
+        <div class="score-actions" aria-label="${escapeHtml(player.name)} 加分">
+          <button class="score-btn minus-score-btn" type="button" data-action="scoreMinus">-1</button>
+          <button class="score-btn" type="button" data-action="score" data-points="1">+1</button>
+          <button class="score-btn" type="button" data-action="score" data-points="2">+2</button>
+          <button class="score-btn" type="button" data-action="score" data-points="3">+3</button>
+        </div>
+        <div class="button-row">
+          <button class="foul-btn" type="button" data-action="foul">
+            <i data-lucide="hand" aria-hidden="true"></i>
+            <span>犯规 +1</span>
+          </button>
+        </div>
+        <div class="correct-row" aria-label="${escapeHtml(player.name)} 更正">
+          <button class="mini-btn minus" type="button" data-action="foulMinus" title="犯规减 1">
+            <i data-lucide="shield-minus" aria-hidden="true"></i>
+          </button>
+          <button class="mini-btn" type="button" data-action="transferPlayer" title="换队">
+            <i data-lucide="arrow-left-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderTeamPanel(team) {
+  const panel = $(`#${team.id}Panel`);
+  const activeTeamId = ensureActiveTeamId();
+  const selecting = uiState.removeTeamId === team.id;
+  const selectedCount = selectedPlayersForTeam(team).length;
+  const removeAction = selecting && selectedCount > 0 ? "confirmRemovePlayers" : "toggleRemoveMode";
+  const removeIcon = selecting && selectedCount > 0 ? "trash-2" : "user-minus";
+  const removeTitle = selecting && selectedCount > 0 ? `确认删除 ${selectedCount} 名球员` : "选择要删除的球员";
+  panel.classList.toggle("home-team", team.id === "home");
+  panel.classList.toggle("away-team", team.id === "away");
+  panel.classList.toggle("is-active-team", team.id === activeTeamId);
+  panel.classList.toggle("is-selecting", selecting);
+  const playersHtml = team.players.length
+    ? team.players.map((player) => playerCard(team, player)).join("")
+    : `<div class="empty-state">先添加参赛球员。记分员之后可以直接在球员行点击 +1、+2、+3 或犯规。</div>`;
+
+  panel.innerHTML = `
+    <div class="team-header">
+      <div>
+        <h2>${escapeHtml(team.name)}</h2>
+        <p>得分、犯规会自动计入球队总分和最终结果。</p>
+      </div>
+      <div class="stat-chips">
+        <span class="chip">${team.players.length} 人</span>
+        <span class="chip">${teamFouls(team)} 犯规</span>
+      </div>
+    </div>
+
+    <div class="player-form" data-team-id="${team.id}">
+      <input type="text" placeholder="球员姓名" aria-label="${escapeHtml(team.name)} 球员姓名" data-field="name" />
+      <button class="secondary-btn" type="button" data-action="addPlayer" title="添加球员">
+        <i data-lucide="user-plus" aria-hidden="true"></i>
+        <span>添加</span>
+      </button>
+      <button class="secondary-btn danger remove-player-btn ${selecting ? "is-active" : ""}" type="button" data-action="${removeAction}" title="${escapeHtml(removeTitle)}">
+        <i data-lucide="${removeIcon}" aria-hidden="true"></i>
+        <span>减员</span>
+      </button>
+    </div>
+
+    <div class="bulk-row" data-team-id="${team.id}">
+      <input class="bulk-input" type="text" placeholder="批量导入：7 张三，10 李四，王五" aria-label="${escapeHtml(team.name)} 批量导入球员" />
+      <button class="secondary-btn" type="button" data-action="bulkAdd">
+        <i data-lucide="list-plus" aria-hidden="true"></i>
+        <span>导入</span>
+      </button>
+    </div>
+
+    <div class="mobile-table-head" aria-hidden="true">
+      <span>球员</span>
+      <span>得分</span>
+      <span>犯</span>
+      <span>操作</span>
+    </div>
+    <div class="player-list">${playersHtml}</div>
+  `;
+}
+
+function renderSummary() {
+  const [home, away] = state.teams;
+  const totalPlayers = home.players.length + away.players.length;
+  $("#summaryList").innerHTML = `
+    <div class="summary-item"><span>参赛球员</span><strong>${totalPlayers} 人</strong></div>
+    <div class="summary-item"><span>总比分</span><strong>${escapeHtml(home.name)} ${teamScore(home)} : ${teamScore(away)} ${escapeHtml(away.name)}</strong></div>
+    <div class="summary-item"><span>全场犯规</span><strong>${teamFouls(home) + teamFouls(away)} 次</strong></div>
+    <div class="summary-item"><span>得分最高</span><strong>${escapeHtml(topScorer())}</strong></div>
+    <div class="summary-item"><span>犯规提醒</span><strong>${escapeHtml(foulWarning())}</strong></div>
+    <div class="summary-item"><span>本机保存</span><strong>${escapeHtml(formatDateTime(state.savedAt))}</strong></div>
+  `;
+}
+
+function renderLog() {
+  const log = $("#gameLog");
+  if (!state.log.length) {
+    log.innerHTML = `<div class="empty-state">暂无操作记录</div>`;
+    return;
+  }
+  log.innerHTML = state.log
+    .map(
+      (entry) => `
+        <div class="log-entry">
+          <strong>${escapeHtml(entry.text)}</strong>
+          <span>${formatTime(entry.at)}</span>
+        </div>
+      `,
+    )
+    .join("");
+}
+
+function renderIcons() {
+  document.querySelectorAll("i[data-lucide]").forEach((icon) => {
+    const name = icon.dataset.lucide;
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("data-icon", name);
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("stroke", "currentColor");
+    svg.setAttribute("stroke-linecap", "round");
+    svg.setAttribute("stroke-linejoin", "round");
+    svg.setAttribute("aria-hidden", "true");
+    svg.innerHTML = ICONS[name] || ICONS.circle;
+    icon.replaceWith(svg);
+  });
+}
+
+function render() {
+  renderScoreboard();
+  state.teams.forEach(renderTeamPanel);
+  renderSummary();
+  renderPresets();
+  renderLog();
+  renderIcons();
+}
+
+function renderPresets() {
+  const select = $("#presetSelect");
+  if (!select) return;
+
+  if (!state.presets.length) {
+    select.innerHTML = `<option value="">暂无预设阵容</option>`;
+    $("#loadPresetBtn").disabled = true;
+    return;
+  }
+
+  select.innerHTML = state.presets
+    .map((preset) => `<option value="${escapeHtml(preset.id)}">${escapeHtml(preset.name)}</option>`)
+    .join("");
+  $("#loadPresetBtn").disabled = false;
+}
+
+function updateGameField(field, value) {
+  state.game[field] = value;
+  saveState();
+  render();
+}
+
+function updateTeamName(teamId, value) {
+  const team = getTeam(teamId);
+  team.name = value.trim() || (teamId === "home" ? DEFAULT_TEAM_NAMES[0] : DEFAULT_TEAM_NAMES[1]);
+  saveState();
+  render();
+}
+
+function addPlayer(teamId, name) {
+  const cleanName = name.trim();
+  if (!cleanName) {
+    showToast("请先填写球员姓名");
+    return;
+  }
+
+  commit(`添加球员：${getTeam(teamId).name} ${cleanName}`, () => {
+    getTeam(teamId).players.push({
+      id: uid(),
+      name: cleanName,
+      avatar: "",
+      points: 0,
+      fouls: 0,
+    });
+  });
+}
+
+function toggleRemoveMode(teamId) {
+  if (uiState.removeTeamId === teamId) {
+    uiState.removeTeamId = null;
+    uiState.selectedPlayerIds.clear();
+  } else {
+    uiState.removeTeamId = teamId;
+    uiState.selectedPlayerIds.clear();
+  }
+  render();
+}
+
+function confirmRemoveSelected(teamId) {
+  const team = getTeam(teamId);
+  if (!team) return;
+  const selectedPlayers = selectedPlayersForTeam(team);
+  if (!selectedPlayers.length) {
+    showToast("请先勾选要删除的球员");
+    return;
+  }
+  const names = selectedPlayers.map((player) => player.name).join("、");
+  const ok = window.confirm(`确认从 ${team.name} 删除 ${selectedPlayers.length} 名球员？\n${names}`);
+  if (!ok) return;
+  const selectedIds = new Set(selectedPlayers.map((player) => player.id));
+  commit(`删除球员：${team.name} ${names}`, () => {
+    team.players = team.players.filter((player) => !selectedIds.has(player.id));
+    uiState.removeTeamId = null;
+    uiState.selectedPlayerIds.clear();
+  });
+}
+
+function setPlayerSelected(teamId, playerId, selected) {
+  if (uiState.removeTeamId !== teamId) {
+    uiState.removeTeamId = teamId;
+    uiState.selectedPlayerIds.clear();
+  }
+  if (selected) {
+    uiState.selectedPlayerIds.add(playerId);
+  } else {
+    uiState.selectedPlayerIds.delete(playerId);
+  }
+  render();
+}
+
+function togglePlayerSelected(teamId, playerId) {
+  setPlayerSelected(teamId, playerId, !uiState.selectedPlayerIds.has(playerId));
+}
+
+function switchActiveTeam(teamId) {
+  if (!state.teams.some((team) => team.id === teamId)) return;
+  uiState.activeTeamId = teamId;
+  render();
+}
+
+function parseBulkPlayers(text) {
+  return text
+    .split(/[,，;；\n]+/)
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .map((item) => {
+      const name = item.replace(/^\d{1,4}\s+/, "").trim();
+      return { name };
+    })
+    .filter((player) => player.name);
+}
+
+function bulkAddPlayers(teamId, text) {
+  const players = parseBulkPlayers(text);
+  if (!players.length) {
+    showToast("请输入要导入的球员");
+    return;
+  }
+
+  commit(`批量导入球员：${getTeam(teamId).name} ${players.length} 人`, () => {
+    const team = getTeam(teamId);
+    players.forEach((player) => {
+      team.players.push({
+        id: uid(),
+        name: player.name,
+        avatar: player.avatar || "",
+        points: 0,
+        fouls: 0,
+      });
+    });
+  });
+}
+
+function handlePanelClick(event) {
+  const button = event.target.closest("button[data-action]");
+  const selectionCard = event.target.closest(".player-card");
+  if (
+    selectionCard &&
+    uiState.removeTeamId === selectionCard.dataset.teamId &&
+    !button &&
+    !event.target.closest(".player-select-control")
+  ) {
+    togglePlayerSelected(selectionCard.dataset.teamId, selectionCard.dataset.playerId);
+    return;
+  }
+
+  if (!button) return;
+
+  const action = button.dataset.action;
+  const card = button.closest(".player-card");
+  const form = button.closest(".player-form");
+  const bulk = button.closest(".bulk-row");
+
+  if (action === "addPlayer" && form) {
+    const teamId = form.dataset.teamId;
+    const name = form.querySelector('[data-field="name"]').value;
+    addPlayer(teamId, name);
+    return;
+  }
+
+  if (action === "toggleRemoveMode" && form) {
+    const teamId = form.dataset.teamId;
+    toggleRemoveMode(teamId);
+    return;
+  }
+
+  if (action === "confirmRemovePlayers" && form) {
+    const teamId = form.dataset.teamId;
+    confirmRemoveSelected(teamId);
+    return;
+  }
+
+  if (action === "bulkAdd" && bulk) {
+    const teamId = bulk.dataset.teamId;
+    bulkAddPlayers(teamId, bulk.querySelector(".bulk-input").value);
+    return;
+  }
+
+  if (!card) return;
+  const teamId = card.dataset.teamId;
+  const playerId = card.dataset.playerId;
+  const team = getTeam(teamId);
+  const player = getPlayer(teamId, playerId);
+  if (!team || !player) return;
+
+  if (action === "score") {
+    const points = Number(button.dataset.points);
+    commit(`${team.name} ${player.name} 得分 +${points}`, () => {
+      player.points += points;
+    });
+    triggerActionFeedback(teamId, playerId, action, points);
+    triggerTeamScoreFeedback(teamId, points);
+  }
+
+  if (action === "foul") {
+    if (clampFouls(player.fouls) >= FOUL_LIMIT) return triggerDeniedFeedback(button, card, `犯规已经是 ${FOUL_LIMIT}`);
+    commit(`${team.name} ${player.name} 犯规 +1`, () => {
+      player.fouls = clampFouls(player.fouls + 1);
+    });
+    triggerActionFeedback(teamId, playerId, action);
+  }
+
+  if (action === "scoreMinus") {
+    if (player.points === 0) return triggerDeniedFeedback(button, card, "得分已经是 0");
+    commit(`${team.name} ${player.name} 更正得分 -1`, () => {
+      player.points -= 1;
+    });
+    triggerActionFeedback(teamId, playerId, action);
+    triggerTeamScoreFeedback(teamId, -1);
+  }
+
+  if (action === "foulMinus") {
+    if (clampFouls(player.fouls) === 0) return triggerDeniedFeedback(button, card, "犯规已经是 0");
+    commit(`${team.name} ${player.name} 更正犯规 -1`, () => {
+      player.fouls = clampFouls(player.fouls - 1);
+    });
+    triggerActionFeedback(teamId, playerId, action);
+  }
+
+  if (action === "transferPlayer") {
+    const targetTeam = state.teams.find((item) => item.id !== teamId);
+    if (!targetTeam) return;
+    commit(`${player.name} 从 ${team.name} 换到 ${targetTeam.name}`, () => {
+      team.players = team.players.filter((item) => item.id !== player.id);
+      targetTeam.players.push(player);
+    });
+  }
+
+}
+
+function handlePanelChange(event) {
+  const checkbox = event.target.closest("input[data-player-select]");
+  if (!checkbox) return;
+  const teamId = checkbox.dataset.teamId;
+  const playerId = checkbox.dataset.playerId;
+  if (uiState.removeTeamId !== teamId) {
+    setPlayerSelected(teamId, playerId, checkbox.checked);
+    return;
+  }
+  setPlayerSelected(teamId, playerId, checkbox.checked);
+}
+
+function undoLast() {
+  const previous = state.history.shift();
+  if (!previous) return;
+  const remainingHistory = state.history;
+  const currentLog = state.log;
+  const currentTeams = state.teams;
+  state = {
+    ...state,
+    ...previous.snapshot,
+    teams: hydrateTeamAvatars(previous.snapshot.teams || state.teams, currentTeams),
+    history: remainingHistory,
+    log: currentLog,
+  };
+  addLog(`撤销：${previous.label}`);
+  saveState();
+  render();
+}
+
+function resetGame() {
+  const firstConfirm = window.confirm("准备重新开始比赛？当前比分、犯规和操作记录会清空。是否继续？");
+  if (!firstConfirm) return;
+  const secondConfirm = window.confirm("请再次确认：确定清空当前比赛并重新开始？");
+  if (!secondConfirm) return;
+  state = defaultState();
+  uiState.activeTeamId = "home";
+  uiState.removeTeamId = null;
+  uiState.selectedPlayerIds.clear();
+  saveState();
+  render();
+  showToast("已重开比赛");
+}
+
+function manualSave() {
+  saveState();
+  render();
+  showToast("已保存到这台手机/浏览器");
+}
+
+function saveRosterPreset() {
+  if (!hasRoster()) {
+    showToast("请先添加球员再保存预设");
+    return;
+  }
+
+  const input = $("#presetNameInput");
+  const name = input.value.trim() || `${state.game.title || "篮球记分牌"}阵容`;
+  const existing = state.presets.find((preset) => preset.name === name);
+  const preset = {
+    id: existing?.id || uid(),
+    name,
+    teams: rosterFromTeams(),
+    createdAt: existing?.createdAt || new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
+
+  pushHistory(`保存预设阵容：${name}`);
+  if (existing) {
+    state.presets = state.presets.map((item) => (item.id === existing.id ? preset : item));
+  } else {
+    state.presets.unshift(preset);
+  }
+  state.presets = state.presets.slice(0, 12);
+  addLog(`保存预设阵容：${name}`);
+  input.value = "";
+  saveState();
+  render();
+  showToast("当前阵容已保存为预设");
+}
+
+function loadRosterPreset() {
+  const presetId = $("#presetSelect").value;
+  const preset = state.presets.find((item) => item.id === presetId);
+  if (!preset) {
+    showToast("请先选择预设阵容");
+    return;
+  }
+
+  const ok = window.confirm(`加载预设阵容“${preset.name}”？当前两队球员和比分会被替换。`);
+  if (!ok) return;
+
+  commit(`加载预设阵容：${preset.name}`, () => {
+    state.teams = normalizeLoadedTeams(preset.teams.map((team, index) => ({
+      id: index === 0 ? "home" : "away",
+      name: team.name || DEFAULT_TEAM_NAMES[index],
+      players: (team.players || []).map((player) => ({
+        id: uid(),
+        name: player.name,
+        avatar: player.avatar || "",
+        points: 0,
+        fouls: 0,
+      })),
+    })), preset.id === CONFIG_PRESET_ID ? 0 : ROSTER_VERSION);
+    state.rosterVersion = ROSTER_VERSION;
+    state.game.finalized = false;
+  });
+}
+
+function toggleFinal() {
+  if (!state.game.finalized) {
+    const [home, away] = state.teams;
+    const scoreLine = `${home.name} ${teamScore(home)}:${teamScore(away)} ${away.name}`;
+    const firstConfirm = window.confirm(`准备结束比赛并生成最终结果：\n${scoreLine}\n\n是否继续？`);
+    if (!firstConfirm) return;
+    const secondConfirm = window.confirm("请再次确认：比赛结束后将标记为最终结果。确定结束比赛？");
+    if (!secondConfirm) return;
+  }
+
+  commit(state.game.finalized ? "继续修改比赛" : "结束比赛并生成结果", () => {
+    state.game.finalized = !state.game.finalized;
+  });
+}
+
+async function copySummary() {
+  const text = buildSummaryText();
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast("比赛结果已复制");
+  } catch {
+    const area = document.createElement("textarea");
+    area.value = text;
+    document.body.appendChild(area);
+    area.select();
+    document.execCommand("copy");
+    area.remove();
+    showToast("比赛结果已复制");
+  }
+}
+
+function exportCsv() {
+  const rows = [["球队", "姓名", "得分", "犯规"]];
+  state.teams.forEach((team) => {
+    team.players.forEach((player) => {
+      rows.push([team.name, player.name, player.points, player.fouls]);
+    });
+  });
+
+  const csv = rows
+    .map((row) => row.map((cell) => `"${String(cell).replaceAll('"', '""')}"`).join(","))
+    .join("\n");
+  const blob = new Blob([`\ufeff${csv}`], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${state.game.title || "篮球赛"}-${fileTimestamp()}-球员统计.csv`;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function backupJson() {
+  saveState();
+  const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${state.game.title || "篮球记分牌"}-${fileTimestamp()}-比赛记录.json`;
+  link.click();
+  URL.revokeObjectURL(url);
+  render();
+  showToast("比赛记录已保存为本地文件");
+}
+
+function copyTextFallback(text) {
+  const area = document.createElement("textarea");
+  area.value = text;
+  area.setAttribute("readonly", "");
+  area.style.position = "fixed";
+  area.style.top = "-1000px";
+  area.style.left = "0";
+  document.body.appendChild(area);
+  area.focus();
+  area.select();
+  area.setSelectionRange(0, area.value.length);
+  let copied = false;
+  try {
+    copied = document.execCommand("copy");
+  } catch {
+    copied = false;
+  }
+  area.remove();
+  return copied;
+}
+
+async function copyText(text) {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch {
+    // Fall back to a selected textarea for iOS/Android browsers.
+  }
+  return copyTextFallback(text);
+}
+
+function closeRecordDialog() {
+  document.querySelector(".record-dialog-backdrop")?.remove();
+}
+
+function createRecordDialog(title, bodyText) {
+  closeRecordDialog();
+  const backdrop = document.createElement("div");
+  backdrop.className = "record-dialog-backdrop";
+  backdrop.innerHTML = `
+    <section class="record-dialog" role="dialog" aria-modal="true" aria-label="${escapeHtml(title)}">
+      <div class="record-dialog-head">
+        <h2>${escapeHtml(title)}</h2>
+        <button class="icon-btn" type="button" data-dialog-action="close" title="关闭">×</button>
+      </div>
+      <p>${escapeHtml(bodyText)}</p>
+      <textarea class="record-code-area" spellcheck="false"></textarea>
+      <div class="record-dialog-actions"></div>
+    </section>
+  `;
+  document.body.appendChild(backdrop);
+  backdrop.addEventListener("click", (event) => {
+    if (event.target === backdrop || event.target.closest('[data-dialog-action="close"]')) {
+      closeRecordDialog();
+    }
+  });
+  return backdrop;
+}
+
+async function copyRecordCode() {
+  saveState();
+  const code = encodeText(JSON.stringify(state));
+  const copied = await copyText(code);
+  const dialog = createRecordDialog(
+    "导出比赛记录",
+    copied ? "记录码已复制。也可以手动复制下面这段文字保存。" : "请手动复制下面这段记录码保存。",
+  );
+  const area = dialog.querySelector(".record-code-area");
+  area.value = code;
+  area.readOnly = true;
+  dialog.querySelector(".record-dialog-actions").innerHTML = `
+    <button class="primary-btn" type="button" data-dialog-action="copy">复制记录码</button>
+    <button class="secondary-btn" type="button" data-dialog-action="close">关闭</button>
+  `;
+  dialog.querySelector('[data-dialog-action="copy"]').addEventListener("click", async () => {
+    const ok = await copyText(area.value);
+    showToast(ok ? "记录码已复制" : "请长按记录码手动复制");
+    area.focus();
+    area.select();
+  });
+  area.focus();
+  area.select();
+  showToast(copied ? "记录码已复制" : "记录码已生成");
+}
+
+function applyRecordCode(code) {
+  if (!code.trim()) {
+    showToast("请先粘贴比赛记录码");
+    return;
+  }
+  try {
+    const parsed = JSON.parse(decodeText(code.trim()));
+    if (!Array.isArray(parsed.teams) || parsed.teams.length !== 2) {
+      throw new Error("Invalid record code");
+    }
+    const restored = normalizeRestoredState(parsed);
+    const ok = window.confirm("导入这个比赛记录码？当前页面数据会被覆盖。");
+    if (!ok) return;
+    state = restored;
+    saveState();
+    render();
+    closeRecordDialog();
+    showToast("比赛记录码已导入");
+  } catch {
+    showToast("比赛记录码无法读取");
+  }
+}
+
+function importRecordCode() {
+  const dialog = createRecordDialog("导入比赛记录", "粘贴之前导出的比赛记录码，然后点击导入。");
+  const area = dialog.querySelector(".record-code-area");
+  area.placeholder = "在这里粘贴比赛记录码";
+  dialog.querySelector(".record-dialog-actions").innerHTML = `
+    <button class="primary-btn" type="button" data-dialog-action="import">导入记录</button>
+    <button class="secondary-btn" type="button" data-dialog-action="close">取消</button>
+  `;
+  dialog.querySelector('[data-dialog-action="import"]').addEventListener("click", () => applyRecordCode(area.value));
+  area.focus();
+}
+
+function normalizeRestoredState(parsed) {
+  const fallback = defaultState();
+  const teams = normalizeLoadedTeams(
+    Array.isArray(parsed.teams) && parsed.teams.length === 2 ? parsed.teams : fallback.teams,
+    parsed.rosterVersion || 0,
+  );
+  return {
+    ...fallback,
+    ...parsed,
+    game: { ...fallback.game, ...(parsed.game || {}), venue: parsed.game?.venue || "默认场地" },
+    teams,
+    rosterVersion: ROSTER_VERSION,
+    presets: mergePresets(parsed.presets, teams),
+    log: Array.isArray(parsed.log) ? parsed.log : [],
+    history: [],
+  };
+}
+
+function restoreJson(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const parsed = JSON.parse(String(reader.result || ""));
+      if (!Array.isArray(parsed.teams) || parsed.teams.length !== 2) {
+        throw new Error("Invalid record file");
+      }
+      const restored = normalizeRestoredState(parsed);
+      const ok = window.confirm("打开这个比赛记录？当前页面数据会被覆盖。");
+      if (!ok) return;
+      state = restored;
+      saveState();
+      render();
+      showToast("比赛记录已打开");
+    } catch {
+      showToast("比赛记录文件无法读取");
+    } finally {
+      $("#restoreInput").value = "";
+    }
+  };
+  reader.readAsText(file);
+}
+
+function clearLog() {
+  const ok = window.confirm("清空操作记录？比分和球员统计不会改变。");
+  if (!ok) return;
+  pushHistory("清空操作记录");
+  state.log = [];
+  saveState();
+  render();
+}
+
+function bindEvents() {
+  $("#homeName").addEventListener("change", (event) => updateTeamName("home", event.target.value));
+  $("#awayName").addEventListener("change", (event) => updateTeamName("away", event.target.value));
+  $("#gameTitle").addEventListener("change", (event) => updateGameField("title", event.target.value.trim() || "篮球记分牌"));
+  $("#gameDate").addEventListener("change", (event) => updateGameField("date", event.target.value));
+  $("#gameVenue").addEventListener("change", (event) => updateGameField("venue", event.target.value.trim()));
+
+  $("#homePanel").addEventListener("click", handlePanelClick);
+  $("#awayPanel").addEventListener("click", handlePanelClick);
+  $("#homePanel").addEventListener("change", handlePanelChange);
+  $("#awayPanel").addEventListener("change", handlePanelChange);
+  $("#saveBtn").addEventListener("click", copyRecordCode);
+  $("#topRestoreBtn").addEventListener("click", importRecordCode);
+  $("#logBtn").addEventListener("click", showOperationLog);
+  $("#undoBtn").addEventListener("click", undoLast);
+  $("#resetBtn").addEventListener("click", resetGame);
+  $("#finishBtn").addEventListener("click", toggleFinal);
+  $("#teamTabs").addEventListener("click", (event) => {
+    const tab = event.target.closest("[data-team-tab]");
+    if (!tab) return;
+    switchActiveTeam(tab.dataset.teamTab);
+  });
+  $("#copySummaryBtn").addEventListener("click", copySummary);
+  $("#exportCsvBtn").addEventListener("click", exportCsv);
+  $("#savePresetBtn").addEventListener("click", saveRosterPreset);
+  $("#loadPresetBtn").addEventListener("click", loadRosterPreset);
+  $("#copyRecordCodeBtn").addEventListener("click", copyRecordCode);
+  $("#importRecordCodeBtn").addEventListener("click", importRecordCode);
+  $("#backupBtn").addEventListener("click", backupJson);
+  $("#restoreBtn").addEventListener("click", () => $("#restoreInput").click());
+  $("#restoreInput").addEventListener("change", (event) => restoreJson(event.target.files?.[0]));
+  $("#clearLogBtn").addEventListener("click", clearLog);
+}
+
+bindEvents();
+render();
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") saveState();
+});
+
+window.addEventListener("pagehide", saveState);
+
+if (navigator.storage?.persist) {
+  navigator.storage.persist().catch(() => {});
+}
+
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+}
+
+
+</script>
+  </body>
+</html>
+

@@ -1,0 +1,17 @@
+{
+  "name": "篮球记分牌",
+  "short_name": "记分牌",
+  "description": "通用篮球比赛记分、犯规和球员统计网页。",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#0f7b63",
+  "icons": [
+    {
+      "src": "./basketball-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
