@@ -15,7 +15,7 @@
 
 <br>
 
-<a href="./demo.html"><img src="https://img.shields.io/badge/🎮_在线体验-Demo-green?style=for-the-badge" alt="demo"></a>
+<a href="https://wizenard.github.io/scoreboard/demo.html"><img src="https://img.shields.io/badge/🎮_在线体验-Demo-green?style=for-the-badge" alt="demo"></a>
 
 <br>
 
@@ -25,7 +25,7 @@
 
 ## 在线体验
 
-<a href="./demo.html">
+<a href="https://wizenard.github.io/scoreboard/demo.html">
 
 <img src="https://img.shields.io/badge/点击打开交互式Demo-22c55e?style=for-the-badge&logo=demo&logoColor=white" alt="open demo">
 
