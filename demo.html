@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>篮球记分牌 Demo</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#e8f5f0 0%,#f5f7fb 300px);min-height:100vh;padding:16px;color:#172033}
+.container{max-width:480px;margin:0 auto}
+
+/* Header */
+.header{text-align:center;margin-bottom:20px}
+.header h1{font-size:28px;font-weight:900;color:#0f7b63}
+.header p{font-size:13px;color:#647184;margin-top:4px}
+
+/* Score Board */
+.scoreboard{display:flex;gap:12px;margin-bottom:20px}
+.team-card{flex:1;background:#fff;border-radius:12px;padding:16px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .15s}
+.team-card.active{transform:scale(1.03);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.team-card.home.active{border-bottom:3px solid #008c8c}
+.team-card.away.active{border-bottom:3px solid #8b3dff}
+.team-label{font-size:12px;color:#647184;text-transform:uppercase;letter-spacing:1px}
+.team-name{font-size:18px;font-weight:800;margin:6px 0}
+.team-score{font-size:48px;font-weight:900;line-height:1}
+.team-card.home .team-score{color:#008c8c}
+.team-card.away .team-score{color:#8b3dff}
+.team-meta{font-size:12px;color:#999;margin-top:6px}
+
+/* Tabs */
+.tabs{display:flex;background:#fff;border-radius:10px;overflow:hidden;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.tab{flex:1;padding:12px;border:none;background:transparent;font-size:14px;font-weight:700;color:#647184;cursor:pointer;transition:all .15s}
+.tab.active{background:#0f7b63;color:#fff}
+
+/* Player List */
+.player-section{background:#fff;border-radius:12px;padding:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.section-title{font-size:14px;font-weight:700;color:#647184;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.section-title span{font-size:12px;color:#0f7b63;cursor:pointer}
+
+.player-list{display:flex;flex-direction:column;gap:8px}
+.player-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#f8fafc;border-radius:10px;transition:background .1s}
+.player-row:hover{background:#f0f4f8}
+.player-avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff;flex-shrink:0}
+.player-avatar.p1{background:linear-gradient(135deg,#008c8c,#0fa68a)}
+.player-avatar.p2{background:linear-gradient(135deg,#0fa68a,#22c55e)}
+.player-avatar.p3{background:linear-gradient(135deg,#8b3dff,#a78bfa)}
+.player-avatar.p4{background:linear-gradient(135deg,#a78bfa,#c084fc)}
+.player-info{flex:1;min-width:0}
+.player-name{font-size:14px;font-weight:700}
+.player-stats{font-size:12px;color:#999}
+.score-controls{display:flex;gap:6px}
+.score-btn{width:36px;height:36px;border-radius:8px;border:none;font-weight:800;font-size:14px;cursor:pointer;display:grid;place-items:center;transition:transform .1s}
+.score-btn:active{transform:scale(.9)}
+.score-btn.plus{background:#e0f2fe;color:#0284c7}
+.score-btn.minus{background:#fef2f2;color:#ef4444}
+.score-btn.foul{background:#fef9c3;color:#ca8a04}
+
+/* Controls */
+.controls{display:flex;gap:8px;margin-top:16px}
+.ctrl-btn{flex:1;padding:14px;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:transform .1s}
+.ctrl-btn:active{transform:scale(.97)}
+.ctrl-btn.primary{background:#0f7b63;color:#fff;box-shadow:0 4px 12px rgba(15,123,99,.2)}
+.ctrl-btn.secondary{background:#fff;color:#647184;border:1px solid #e5edf7}
+
+/* Footer */
+.footer{text-align:center;margin-top:24px;font-size:12px;color:#999}
+.footer a{color:#0f7b63;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🏀 篮球记分牌</h1>
+    <p>纯前端 · 零依赖 · 数据保存在浏览器</p>
+  </div>
+
+  <div class="scoreboard">
+    <div class="team-card home active" onclick="switchTeam('home')">
+      <div class="team-label">主队</div>
+      <div class="team-name">队伍A</div>
+      <div class="team-score" id="homeScore">0</div>
+      <div class="team-meta"><span id="homePlayers">3</span> 名球员</div>
+    </div>
+    <div class="team-card away" onclick="switchTeam('away')">
+      <div class="team-label">客队</div>
+      <div class="team-name">队伍B</div>
+      <div class="team-score" id="awayScore">0</div>
+      <div class="team-meta"><span id="awayPlayers">3</span> 名球员</div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(0)">队伍A</button>
+    <button class="tab" onclick="switchTab(1)">队伍B</button>
+  </div>
+
+  <div class="player-section">
+    <div class="section-title">
+      球员列表
+      <span id="totalFouls">犯规: 0</span>
+    </div>
+    <div class="player-list" id="playerList"></div>
+  </div>
+
+  <div class="controls">
+    <button class="ctrl-btn secondary" onclick="resetGame()">🔄 重置</button>
+    <button class="ctrl-btn primary" onclick="exportStats()">📊 导出统计</button>
+  </div>
+
+  <div class="footer">
+    <p>完整版请查看 <a href="./basketball-scorekeeper-mobile.html">手机单文件版</a></p>
+  </div>
+</div>
+
+<script>
+const players = {
+  home: [
+    { name: "球员01", score: 0, fouls: 0 },
+    { name: "球员02", score: 0, fouls: 0 },
+    { name: "球员03", score: 0, fouls: 0 }
+  ],
+  away: [
+    { name: "球员04", score: 0, fouls: 0 },
+    { name: "球员05", score: 0, fouls: 0 },
+    { name: "球员06", score: 0, fouls: 0 }
+  ]
+};
+
+let currentTeam = 'home';
+
+function switchTeam(team) {
+  currentTeam = team;
+  document.querySelectorAll('.team-card').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.team-card.${team}`).classList.add('active');
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  tabs[team === 'home' ? 0 : 1].classList.add('active');
+  render();
+}
+
+function switchTab(idx) {
+  switchTeam(idx === 0 ? 'home' : 'away');
+}
+
+function updateScore(team, playerIdx, delta) {
+  const p = players[team][playerIdx];
+  p.score = Math.max(0, p.score + delta);
+  updateTotals();
+  render();
+}
+
+function addFoul(team, playerIdx) {
+  players[team][playerIdx].fouls++;
+  updateTotals();
+  render();
+}
+
+function updateTotals() {
+  let homeScore = 0, awayScore = 0, totalFouls = 0;
+  players.home.forEach(p => { homeScore += p.score; totalFouls += p.fouls; });
+  players.away.forEach(p => { awayScore += p.score; totalFouls += p.fouls; });
+  document.getElementById('homeScore').textContent = homeScore;
+  document.getElementById('awayScore').textContent = awayScore;
+  document.getElementById('totalFouls').textContent = `犯规: ${totalFouls}`;
+}
+
+function render() {
+  const list = document.getElementById('playerList');
+  const teamPlayers = players[currentTeam];
+  const avatarClass = currentTeam === 'home' ? 'p1' : 'p3';
+  const avatarClass2 = currentTeam === 'home' ? 'p2' : 'p4';
+
+  list.innerHTML = teamPlayers.map((p, i) => `
+    <div class="player-row">
+      <div class="player-avatar ${i % 2 === 0 ? avatarClass : avatarClass2}">${p.name.slice(-2)}</div>
+      <div class="player-info">
+        <div class="player-name">${p.name}</div>
+        <div class="player-stats">${p.score} 分 · ${p.fouls} 犯规</div>
+      </div>
+      <div class="score-controls">
+        <button class="score-btn minus" onclick="updateScore('${currentTeam}',${i},-1)">−</button>
+        <button class="score-btn plus" onclick="updateScore('${currentTeam}',${i},1)">+1</button>
+        <button class="score-btn plus" onclick="updateScore('${currentTeam}',${i},2)" style="font-size:12px">+2</button>
+        <button class="score-btn plus" onclick="updateScore('${currentTeam}',${i},3)" style="font-size:12px">+3</button>
+        <button class="score-btn foul" onclick="addFoul('${currentTeam}',${i})">F</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function resetGame() {
+  if (!confirm('确定要重置所有数据吗？')) return;
+  players.home.forEach(p => { p.score = 0; p.fouls = 0; });
+  players.away.forEach(p => { p.score = 0; p.fouls = 0; });
+  updateTotals();
+  render();
+}
+
+function exportStats() {
+  let csv = '球员,球队,得分,犯规\n';
+  players.home.forEach(p => csv += `${p.name},队伍A,${p.score},${p.fouls}\n`);
+  players.away.forEach(p => csv += `${p.name},队伍B,${p.score},${p.fouls}\n`);
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'stats.csv';
+  a.click();
+}
+
+render();
+</script>
+</body>
+</html>

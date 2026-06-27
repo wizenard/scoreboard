@@ -15,17 +15,29 @@
 
 <br>
 
+<a href="./demo.html"><img src="https://img.shields.io/badge/🎮_在线体验-Demo-green?style=for-the-badge" alt="demo"></a>
+
+<br>
+
 ---
 
 </div>
 
-## 截图预览
+## 在线体验
 
-<div align="center">
+<a href="./demo.html">
 
-![示意图](screenshot.png)
+<img src="https://img.shields.io/badge/点击打开交互式Demo-22c55e?style=for-the-badge&logo=demo&logoColor=white" alt="open demo">
 
-</div>
+</a>
+
+点击上方按钮打开可交互的记分牌演示，支持：
+- 🏀 实时计分（+1/+2/+3 分）
+- 👥 队伍切换
+- ⚠️ 犯规记录
+- 📊 导出 CSV 统计
+
+> 💡 完整功能请使用 [手机单文件版](./basketball-scorekeeper-mobile.html) 或 [微信链接版](./wechat-h5/index.html)
 
 ---
 
@@ -147,6 +159,7 @@ window.BASKETBALL_PLAYER_CONFIG = {
 
 ```
 scoreboard/
+├── demo.html                           # 交互式 Demo（可直接打开）
 ├── index.html                          # 主页面（电脑版）
 ├── basketball-scorekeeper-mobile.html  # 手机单文件版
 ├── app.js                              # 核心逻辑
